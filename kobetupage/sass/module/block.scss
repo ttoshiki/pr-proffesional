@@ -1,0 +1,1080 @@
+/* ブロックグループ
+
+・一つの塊として持ち運び可能な要素群を形成
+========================================================== */
+// 変数とミックスインをインポート
+@import "../_variable";
+@import "../_mixin";
+// ******************* ここから記述 *******************
+
+/*セクション
+---------------------------------------------------------------------------*/
+.bl_sect {
+    padding-bottom: 110px;
+
+    @include media(ltXl) {
+        padding-bottom: 110px * .8;
+    }
+    @include media(tabSp) {
+        padding-bottom: 110px * .6;
+    }
+    @include media(smOnly) {
+        padding-bottom: 55px;
+    }
+}
+
+/*ボックス
+---------------------------------------------------------------------------*/
+.bl_boxWrapper {
+    .bl_box {
+        margin-bottom: 60px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @include media(ltXl) {
+        .bl_box {
+            margin-bottom: 60px * .8;
+        }
+    }
+    @include media(tabSp) {
+        .bl_box {
+            margin-bottom: 60px * .6;
+        }
+    }
+    @include media(smOnly) {
+        .bl_box {
+            margin-bottom: 40px;
+        }
+    }
+}
+.bl_box {
+    background-color: $white;
+    @include boxShadow_m;
+    padding: 75px 70px;
+
+    @include media(ltXl) {
+        padding: 75px * .8 70px * .8;
+    }
+    @include media(tabSp) {
+        padding: 75px * .6 70px * .6;
+    }
+    @include media(smOnly) {
+        padding: 25px 0 45px;
+
+        .ly_contS {
+            padding: 0 15px;
+        }
+    }
+}
+
+/*CTA
+---------------------------------------------------------------------------*/
+.bl_cta {
+    padding: 80px 0;
+    background-color: $beige;
+
+    &_inner {
+        position: relative;
+        padding: 20px 15px 110px;
+        background-color: $white;
+        text-align: center;
+        @include boxShadow_l;
+    }
+    &_ttl {
+        margin-bottom: 30px;
+        white-space: nowrap;
+    }
+    &_icnCard {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background-color: $white;
+        @include boxShadow_m;
+
+        &_img {
+            flex: 0 0 60px;
+            margin-right: 20px;
+        }
+        &_txt {
+            color: $navy;
+            font-size: 2.3rem;
+            text-align: left;
+            line-height: 1.6;
+        }
+    }
+    &_txt {
+        white-space: nowrap;
+    }
+    &_btn {
+        position: absolute;
+        left: 50%;
+        bottom: -30px;
+        transform: translateX(-50%);
+    }
+    &_subttl {
+        margin-bottom: 70px;
+        position: relative;
+        padding: .4em .6em;
+        background-color: $mainColor;
+        color: $white;
+        text-align: center;
+        font-size: 2.6rem;
+        @include zIndex;
+
+        &::after {
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            width: 30px;
+            height: 30px;
+            background-color: $mainColor;
+            transform: translateX(-50%) rotate(45deg);
+            content: '';
+            @include zIndex(bg);
+        }
+        > span {
+            font-size: 1.8rem;
+        }
+    }
+    &_ol {
+        margin-bottom: 40px;
+        counter-reset: cta_ol;
+
+        > *:last-child {
+            margin-bottom: 0;
+        }
+        > li {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 2.6em;
+            color: $mainColor;
+
+            &::before {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 40px;
+                height: 40px;
+                border: 3px solid;
+                font-size: 1.7rem;
+                content: counter(cta_ol);
+                counter-increment: cta_ol;
+                transform: translateY(-0.3em);
+            }
+        }
+    }
+    &_note {
+        font-size: 1.7rem;
+    }
+    &.bl_cta__lg {
+        padding: 80px 0 125px;
+
+        .bl_cta_btn {
+            bottom: -58px;
+        }
+    }
+}
+
+/*CTA レスポンシブ*/
+@include media(ltXl) {
+    .bl_cta {
+        padding: 80px * .8 0;
+
+        &_inner {
+            padding: 20px * .8 15px * .8 110px * .8;
+        }
+        &_ttl {
+            margin-bottom: 30px * .8;
+        }
+        &_icnCard {
+            padding: 20px * .8;
+
+            &_img {
+                flex: 0 0 60px * .8;
+                margin-right: 20px * .8;
+            }
+            &_txt {
+                font-size: 2.3rem * .8;
+            }
+        }
+        &_btn {
+            bottom: -30px * .8;
+        }
+        &_subttl {
+            margin-bottom: 70px * .8;
+            font-size: 2.6rem * .8;
+
+            &::after {
+                bottom: -15px * .8;
+                width: 30px * .8;
+                height: 30px * .8;
+            }
+            > span {
+                font-size: 1.8rem * .8;
+            }
+        }
+        &_ol {
+            margin-bottom: 40px * .8;
+            > li {
+                margin-bottom: 30px * .8;
+
+                &::before {
+                    width: 40px * .8;
+                    height: 40px * .8;
+                    font-size: 1.7rem * .8;
+                }
+            }
+        }
+        &_note {
+            font-size: 1.7rem * .8;
+        }
+        &.bl_cta__lg {
+            padding: 80px * .8 0 125px * .8;
+
+            .bl_cta_btn {
+                bottom: -58px * .8;
+            }
+        }
+    }
+}
+@include media(tabSp) {
+    .bl_cta {
+        padding: 80px * .6 0;
+
+        &_inner {
+            padding: 20px * .6 15px * .6 110px * .6;
+        }
+        &_ttl {
+            margin-bottom: 30px * .6;
+        }
+        &_icnCard {
+            padding: 20px * .6;
+
+            &_img {
+                flex: 0 0 60px * .6;
+                margin-right: 20px * .6;
+            }
+            &_txt {
+                font-size: 2.3rem * .6;
+            }
+        }
+        &_btn {
+            bottom: -30px * .6;
+        }
+        &_subttl {
+            margin-bottom: 70px * .6;
+            font-size: 2.6rem * .6;
+
+            &::after {
+                bottom: -15px * .6;
+                width: 30px * .6;
+                height: 30px * .6;
+            }
+            > span {
+                font-size: 1.8rem * .6;
+            }
+        }
+        &_ol {
+            margin-bottom: 40px * .6;
+
+            > li {
+                margin-bottom: 30px * .6;
+
+                &::before {
+                    width: 40px * .6;
+                    height: 40px * .6;
+                    font-size: 1.7rem * .6;
+                }
+            }
+        }
+        &_note {
+            font-size: 1.7rem * .6;
+        }
+        &.bl_cta__lg {
+            padding: 80px * .6 0 125px * .6;
+
+            .bl_cta_btn {
+                bottom: -58px * .6;
+            }
+        }
+    }
+}
+@include media(smOnly) {
+    .bl_cta {
+        padding: 35px 0 88px;
+
+        p {
+            font-size: 1.3rem;
+        }
+
+        .ly_contS,
+        .ly_contXs {
+            padding: 0;
+        }
+
+        &_inner {
+            padding: 20px 15px 50px;
+        }
+        &_ttl {
+            margin-bottom: 15px;
+        }
+        &_icnCard {
+            padding: 10px 5px 10px 10px;
+
+            &_img {
+                flex-basis: 28px;
+                margin-right: 8px;
+            }
+            &_txt {
+                font-size: 1.3rem;
+            }
+        }
+        &_subttl {
+            margin-bottom: 30px;
+            padding: .6em;
+
+            &::after {
+                bottom: -10px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &_ol {
+            margin-bottom: 30px;
+
+            > li {
+                margin-bottom: 10px;
+                padding-left: 2em;
+
+                &::before {
+                    width: 20px;
+                    height: 20px;
+                    border-width: 2px;
+                    font-size: 1.2rem;
+                    transform: translateY(0);
+                }
+            }
+        }
+        &_note {
+            font-size: 1.2rem;
+            text-align: left;
+            line-height: 2;
+        }
+        &_btn {
+            bottom: -30px;
+        }
+        &.bl_cta__lg {
+            padding: 35px 0 88px;
+
+            .bl_cta_btn {
+                bottom: -30px;
+            }
+        }
+    }
+}
+
+/*チェックリスト
+---------------------------------------------------------------------------*/
+.bl_checklist {
+	> li {
+		position: relative;
+        margin-bottom: 30px;
+		padding-left: 2.5em;
+        line-height: 1.8;
+        font-size: 2.2rem;
+
+		&::before {
+			display: block;
+			position: absolute;
+			top: .8em;
+			left: 0;
+			width: 1.1em;
+			height: 1.1em;
+            background: url(../../img/icn/check.png) no-repeat center/contain;
+			content: '';
+		}
+        &:last-child {
+            margin-bottom: 0;
+        }
+	}
+    &_strong {
+        font-size: 3rem;
+        color: $red;
+    }
+    @include media(ltXl) {
+        > li {
+            margin-bottom: 30px * .8;
+            font-size: 2.2rem * .8;
+    	}
+        &_strong {
+            font-size: 3rem * .8;
+        }
+    }
+    @include media(tabSp) {
+        > li {
+            margin-bottom: 30px * .6;
+            font-size: 2.2rem * .6;
+    	}
+        &_strong {
+            font-size: 3rem * .6;
+        }
+    }
+    @include media(smOnly) {
+        > li {
+            margin-bottom: 15px;
+            padding-left: 1.8em;
+            line-height: 1.6;
+
+            &::before {
+    			top: .6em;
+    		}
+        }
+        &_strong {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+/*テーブル
+---------------------------------------------------------------------------*/
+.bl_horizTable {
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 15px;
+        letter-spacing: 0;
+    }
+    th {
+        padding: 10px;
+        width: 175px;
+        background-color: $gold;
+        color: $white;
+        font-size: 2.5rem;
+        text-align: center;
+        vertical-align: middle;
+        @include boxShadow_s;
+    }
+    td {
+        padding: 25px;
+        background-color: $white;
+        color: $navy;
+        font-size: 1.7rem;
+        @include textJustify;
+        @include boxShadow_m;
+
+        > ul {
+            > li {
+                position: relative;
+                margin-bottom: .6em;
+                padding-left: .5em;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    top: .5em;
+                    border-radius: 50%;
+                    width: .3em;
+                    height: .3em;
+                    background-color: currentColor;
+                    content: '';
+                }
+                > ul {
+                    margin-top: .6em;
+                    padding-left: .8em;
+
+                    > li {
+                        position: relative;
+                        margin-bottom: .6em;
+                        padding-left: .8em;
+                        letter-spacing: 0;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            left: 0;
+                            top: .7em;
+                            width: .3em;
+                            height: 2px;
+                            background-color: currentColor;
+                            content: '';
+                        }
+                    }
+                }
+            }
+        }
+    }
+    tr:last-child td,
+    tr:last-child th {
+        border-bottom-width: 0;
+    }
+    @include media(ltXl) {
+        table {
+            border-spacing: 15px * .8;
+        }
+
+        th {
+            padding: 10px * .8;
+            width: 175px * .8;
+            font-size: 2.5rem * .8;
+        }
+
+        td {
+            padding: 25px * .8;
+            font-size: 1.7rem * .8;
+        }
+    }
+    @include media(tabSp) {
+        table {
+            border-spacing: 15px * .6;
+        }
+
+        th {
+            padding: 10px * .6;
+            width: 175px * .6;
+            font-size: 2.5rem * .6;
+        }
+
+        td {
+            padding: 25px * .6;
+            font-size: 1.7rem * .6;
+        }
+    }
+    @include media(smOnly) {
+        table {
+            border-spacing: 0;
+        }
+        th,
+        td {
+            display: block;
+            font-size: 1.3rem;
+        }
+        th {
+            padding: 8px 15px;
+            width: 100%;
+            @include boxShadow_m;
+            letter-spacing: 1px;
+        }
+        td {
+            margin-bottom: 25px;
+            padding: 15px;
+        }
+        tr:last-child td {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/*テキストカード
+---------------------------------------------------------------------------*/
+.bl_txtCardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &.bl_txtCardList__col3 {
+        margin-bottom: -50px;
+        .bl_txtCard {
+            margin-bottom: 50px;
+            @include colCalc(3, 30px);
+        }
+    }
+}
+.bl_txtCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    @include boxShadow_m;
+    padding: 10px 0;
+    min-height: 145px;
+    text-align: center;
+    color: $navy;
+    letter-spacing: 0;
+
+    p {
+        line-height: 1.5;
+        font-size: 2.2rem;
+    }
+    &_note {
+        font-size: 1.5rem;
+    }
+}
+
+@include media(ltXl) {
+    .bl_txtCardList {
+        &.bl_txtCardList__col3 {
+            margin-bottom: -50px * .8;
+            .bl_txtCard {
+                margin-bottom: 50px * .8;
+                @include colCalc(3, 30px * .8);
+            }
+        }
+    }
+    .bl_txtCard {
+        padding: 10px * .8 0;
+        min-height: 145px * .8;
+
+        p {
+            font-size: 2.2rem * .8;
+        }
+        &_note {
+            font-size: 1.5rem * .8;
+        }
+    }
+}
+@include media(tabSp) {
+    .bl_txtCardList {
+        &.bl_txtCardList__col3 {
+            margin-bottom: -50px * .6;
+            .bl_txtCard {
+                margin-bottom: 50px * .6;
+                @include colCalc(3, 30px * .6);
+            }
+        }
+    }
+    .bl_txtCard {
+        padding: 10px * .6 0;
+        min-height: 145px * .6;
+
+        p {
+            font-size: 2.2rem * .6;
+        }
+        &_note {
+            font-size: 1.5rem * .6;
+        }
+    }
+}
+@include media(smOnly) {
+    .bl_txtCardList {
+        display: block;
+
+        &.bl_txtCardList__col3 {
+            margin-bottom: -10px;
+            .bl_txtCard {
+                margin-bottom: 10px;
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+    .bl_txtCard {
+        padding: 10px 5px;
+        min-height: 38px;
+
+        p {
+            line-height: 1.5;
+            font-size: 1.3rem;
+        }
+        &_note {
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+/*FAQ
+---------------------------------------------------------------------------*/
+.bl_faq {
+    &_item {
+        margin-bottom: 35px;
+        @include boxShadow_m;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &_a,
+    &_q {
+        display: flex;
+        position: relative;
+        padding: 30px 60px 30px 80px;
+        letter-spacing: 0.2em;
+        @include textJustify;
+    }
+    &_q {
+        cursor: pointer;
+        color: $red;
+
+        .bl_faq_icon {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &_a {
+        display: none;
+        padding-top: 4px;
+        &_body {
+            font-size: 1.8rem;
+
+            > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .bl_faq_icon {
+            top: 0;
+        }
+
+        &_txt {
+            margin-bottom: 20px;
+        }
+    }
+    &_icon {
+        position: absolute;
+        left: 32px;
+        font-style: italic;
+        font-size: 1.6em;
+    }
+    &_btn {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        @include plus($size: 12px, $color: $red);
+    }
+    @include media(ltXl) {
+        &_item {
+            margin-bottom: 35px * .8;
+        }
+        &_a,
+        &_q {
+            padding: 30px * .8 60px * .8 30px * .8 80px * .8;
+        }
+        &_a {
+            padding-top: 4px * .8;
+            &_body {
+                font-size: 1.8rem * .8;
+            }
+            &_txt {
+                margin-bottom: 20px * .8;
+            }
+        }
+        &_icon {
+            left: 32px * .8;
+        }
+        &_btn {
+            right: 30px * .8;
+        }
+    }
+    @include media(tabSp) {
+        &_item {
+            margin-bottom: 35px * .6;
+        }
+        &_a,
+        &_q {
+            padding: 30px * .6 60px * .6 30px * .6 80px * .6;
+        }
+        &_a {
+            padding-top: 4px * .6;
+            &_body {
+                font-size: 1.8rem * .6;
+            }
+            &_txt {
+                margin-bottom: 20px * .6;
+            }
+        }
+        &_icon {
+            left: 32px * .6;
+        }
+        &_btn {
+            right: 30px * .6;
+        }
+    }
+    @include media(smOnly) {
+        &_item {
+            margin-bottom: 15px;
+        }
+        &_q,
+        &_a {
+            letter-spacing: 1px;
+        }
+        &_q {
+            padding: 15px 40px;
+
+            .bl_faq_icon {
+                top: 8px;
+                transform: translateY(0);
+            }
+        }
+        &_a {
+            padding: 15px;
+            padding-left: 40px;
+        }
+        &_a {
+            padding: 3px 15px 15px 40px;
+            &_body {
+                font-size: 1.3rem;
+            }
+            &_txt {
+                margin-bottom: 15px;
+            }
+        }
+        &_icon {
+            left: 12px;
+            font-size: 1.4em;
+        }
+        &_btn {
+            right: 20px;
+
+            &::before,
+            &::after {
+                width: 8px;
+            }
+        }
+    }
+}
+
+/*声
+---------------------------------------------------------------------------*/
+.bl_voiceWrapper {
+    .bl_voice {
+        margin-bottom: 70px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @include media(ltXl) {
+        .bl_voice {
+            margin-bottom: 70px * .8;
+        }
+    }
+    @include media(tabSp) {
+        .bl_voice {
+            margin-bottom: 70px * .6;
+        }
+    }
+    @include media(smOnly) {
+        .bl_voice {
+            margin-bottom: 30px;
+        }
+    }
+}
+.bl_voice {
+    padding: 30px 40px 40px 40px;
+    background-color: $white;
+    @include boxShadow_m;
+
+    &_header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    &_label {
+        position: absolute;
+        top: -5px;
+        left: -10px;
+        font-size: 3rem;
+        color: $red;
+        font-style: italic;
+        line-height: 1;
+        @include zIndex;
+    }
+    &_imgWrapper {
+        flex: 0 0 230px;
+        position: relative;
+        margin-right: 25px;
+    }
+    &_txt {
+        flex: 1 1 auto;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $red;
+    }
+    &_ttl {
+        margin-bottom: 15px;
+        font-size: 2.1rem;
+        font-style: italic;
+        letter-spacing: 0;
+        line-height: 1.6;
+
+        &_strong {
+            font-size: 3.1rem;
+        }
+    }
+    &_name {
+        font-size: 1.5rem;
+    }
+    &_body {
+        p {
+            letter-spacing: 1px;
+            line-height: 2.2;
+            @include textJustify;
+        }
+    }
+    @include media(ltXl) {
+        padding: 30px * .8 40px * .8 40px * .8 40px * .8;
+
+        &_header {
+            margin-bottom: 40px * .8;
+        }
+        &_label {
+            top: -5px * .8;
+            left: -10px * .8;
+            font-size: 3rem * .8;
+        }
+        &_imgWrapper {
+            flex-basis: 230px * .8;
+            margin-right: 25px * .8;
+        }
+        &_txt {
+            padding-bottom: 15px * .8;
+        }
+        &_ttl {
+            margin-bottom: 10px * .8;
+            font-size: 2.1rem * .8;
+
+            &_strong {
+                font-size: 3.1rem * .8;
+            }
+        }
+        &_name {
+            font-size: 1.5rem * .8;
+        }
+    }
+    @include media(tabSp) {
+        padding: 30px * .6 40px * .6 40px * .6 40px * .6;
+
+        &_header {
+            margin-bottom: 40px * .6;
+        }
+        &_label {
+            top: -5px * .6;
+            left: -10px * .6;
+            font-size: 3rem * .6;
+        }
+        &_imgWrapper {
+            flex-basis: 230px * .6;
+            margin-right: 25px * .6;
+        }
+        &_txt {
+            padding-bottom: 15px * .6;
+        }
+        &_ttl {
+            margin-bottom: 10px * .6;
+            font-size: 2.1rem * .6;
+
+            &_strong {
+                font-size: 3.1rem * .6;
+            }
+        }
+        &_name {
+            font-size: 1.5rem * .6;
+        }
+    }
+    @include media(smOnly) {
+        padding: 17px 15px;
+
+        &_header {
+            display: block;
+            margin-bottom: 10px;
+        }
+        &_label {
+            position: absolute;
+            top: 50%;
+            left: -40px;
+            font-size: 1.7rem;
+            transform: translateY(-50%);
+        }
+        &_imgWrapper {
+            margin: 0 auto 20px;
+            width: 118px;
+        }
+        &_txt {
+            padding-bottom: 12px;
+            border-width: 1px;
+        }
+        &_ttl {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+            line-height: 1.7;
+
+            &_strong {
+                font-size: 1.8rem;
+            }
+        }
+        &_name {
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        &_body {
+            p {
+                letter-spacing: 0;
+                line-height: 2;
+            }
+        }
+    }
+}
+
+/*アイコンカード
+---------------------------------------------------------------------------*/
+.bl_icnCard {
+    padding: 20px;
+    background-color: $white;
+    @include boxShadow_m;
+
+    &_label {
+        margin-bottom: 20px;
+        color: $mainColor;
+        text-align: center;
+    }
+    &_img {
+        margin-bottom: 20px;
+        text-align: center;
+        img {
+            height: 110px;
+            width: auto;
+        }
+    }
+    &_txt {
+        color: $mainColor;
+        font-size: 2.5rem;
+        text-align: center;
+        line-height: 1.6;
+    }
+    @include media(ltXl) {
+        padding: 20px * .8;
+
+        &_label {
+            margin-bottom: 20px * .8;
+        }
+        &_img {
+            margin-bottom: 20px * .8;
+            img {
+                height: 110px * .8;
+            }
+        }
+        &_txt {
+            font-size: 2.5rem * .8;
+        }
+    }
+    @include media(tabSp) {
+        padding: 20px * .6;
+
+        &_label {
+            margin-bottom: 20px * .6;
+        }
+        &_img {
+            margin-bottom: 20px * .6;
+            img {
+                height: 110px * .6;
+            }
+        }
+        &_txt {
+            font-size: 2.5rem * .6;
+        }
+    }
+    @include media(smOnly) {
+        padding: 20px;
+    }
+}

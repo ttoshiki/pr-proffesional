@@ -1,0 +1,59 @@
+// サイド
+// ---------------------------------------------------------------------------
+// ------- コンテナ側面
+$side: 20px;
+
+// コンテナ幅
+// ---------------------------------------------------------------------------
+// ------- s
+$contWidth_s: 800px;
+// ------- m
+$contWidth_m: 1000px;
+// ------- l
+$contWidth_l: 1122px;
+// ------- xl
+$contWidth_xl: 1200px;
+
+
+// ブレイクポイント
+// ---------------------------------------------------------------------------
+$bp_sm: 576px;
+$bp_md: 768px;
+$bp_lg: 992px;
+$bp_xl: $contWidth_xl + $side * 2;
+$bp_xsLimit: $bp_sm - 1;
+$bp_smLimit: $bp_md - 1;
+$bp_mdLimit: $bp_lg - 1;
+$bp_lgLimit: $bp_xl - 1;
+
+$bpList: (
+  'ltSm': 'screen and (max-width: #{$bp_xsLimit})',
+  'sm': 'screen and (min-width: #{$bp_sm})',
+  'smOnly': 'screen and (max-width: #{$bp_smLimit})',
+  'md': 'screen and (min-width: #{$bp_md})',
+  'tabSp': 'screen and (max-width: #{$bp_mdLimit})',
+  'lg': 'screen and (min-width: #{$bp_lg})',
+  'ltXl': 'screen and (max-width: #{$bp_lgLimit})',
+  'xl': 'screen and (min-width: #{$bp_xl})',
+) !default;
+
+// 色
+// ---------------------------------------------------------------------------
+$mainColor: #d7061f;
+$fontColor: #222;
+
+$white: #fff;
+$black: #000;
+$gold: #c7a44b;
+$beige: rgba($gold, .2);
+$red: #e71212;
+$navy: #202d73;
+$lightBlue: rgb(236, 238, 255);
+$gray-darker: #444;
+$gray: #777;
+$gray-light: #A3A3A3;
+$gray-lighter: #f7f7f7;
+
+// opacity
+// ---------------------------------------------------------------------------
+$opacity: .6;

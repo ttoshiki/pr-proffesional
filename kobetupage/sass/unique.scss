@@ -1,0 +1,1608 @@
+/* ユニークグループ
+
+・ある1ページでしか使用されていないことを明示するグループ
+・そのページでしか使われていないため、改修や運用の際に影響範囲を気にせずにスタイルを編集してよい
+========================================================== */
+// 変数とミックスインをインポート
+@import "_variable";
+@import "_mixin";
+// ******************* ここから記述 *******************
+
+/*メインビジュアル
+---------------------------------------------------------------------------*/
+.un_MV {
+    $winW: 1000;
+
+    &_top {
+        background-color: $white;
+        color: $mainColor;
+        text-align: center;
+        padding: 15px 0;
+        letter-spacing: 0;
+
+        &_txt {
+            font-size: 3.5rem;
+            line-height: 2;
+        }
+        .el_dotTxt > span::before {
+            top: -0.3em;
+        }
+    }
+    &_body {
+        background: url(../img/mv.jpg) no-repeat center/cover;
+    }
+    &_inner {
+        position: relative;
+        padding: 90px 0 80px;
+    }
+    &_catch {
+        position: relative;
+        margin: 0 auto 55px;
+        width: percentage(920 / $winW);
+        @include zIndex;
+    }
+    &_desc {
+        padding-left: 20px;
+        width: percentage(690 / $winW);
+    }
+    &_ojt {
+        position: absolute;
+        right: -45px;
+        bottom: 45px;
+        width: percentage(290 / $winW);
+    }
+    &_achive {
+        display: none;
+    }
+    &_label {
+        display: none;
+    }
+    @include media(ltXl) {
+        &_top {
+            padding: 15px * .8 0;
+
+            &_txt {
+                font-size: 3.5rem * .8;
+            }
+        }
+        &_inner {
+            padding: 90px * .8 0 80px * .8;
+        }
+        &_catch {
+            margin: 0 auto 55px * .8;
+        }
+        &_desc {
+            padding-left: 20px * .8;
+        }
+        &_ojt {
+            right: -45px * .8;
+            bottom: 45px * .8;
+        }
+    }
+    @include media(tabSp) {
+        &_top {
+            padding: 15px * .6 0;
+
+            &_txt {
+                font-size: 3.5rem * .6;
+            }
+        }
+        &_inner {
+            padding: 90px * .6 0 80px * .6;
+        }
+        &_catch {
+            margin: 0 auto 55px * .6;
+        }
+        &_desc {
+            padding-left: 20px * .6;
+        }
+        &_ojt {
+            right: -45px * .6;
+            bottom: 45px * .6;
+        }
+    }
+    @include media(smOnly) {
+        $winW: 670;
+        position: relative;
+        background: url(../img/mv_sp.jpg) no-repeat center/cover;
+        height: calc(100vh - 60px);
+        min-height: 710px;
+
+        @media screen and (orientation: landscape) {
+           // 横向きの場合のスタイル
+           height: auto;
+        }
+        &_top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            height: 75px;
+            letter-spacing: 1px;
+
+            &_txt {
+                font-size: 1.5rem;
+            }
+            .el_dotTxt > span::before {
+                top: -0.4em;
+            }
+        }
+        &_body {
+            position: relative;
+            background: none;
+            height: calc(100vh - 60px - 75px);
+            min-height: 710px - 75px;
+
+            @media screen and (orientation: landscape) {
+               // 横向きの場合のスタイル
+               height: auto;
+            }
+        }
+        &_inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 540px - $side * 2;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            padding: 50px $side 20px;
+        }
+        &_txt {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 65px;
+            padding: 0 percentage(50 / 750);
+            @include zIndex;
+        }
+        &_catch {
+            margin: 0 auto 10px;
+            width: 100%;
+        }
+        &_desc {
+            margin: 0 auto;
+            width: 100%;
+
+            padding-left: 0;
+        }
+        &_ojt {
+            right: $side - 5;
+            bottom: 15px;
+            width: percentage(420 / 750);
+            max-width: 230px;
+        }
+        &_achive {
+            display: block;
+            width: percentage(320 / 750);
+            max-width: 200px;
+        }
+        &_label {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: percentage(250 / 750);
+            max-width: 150px;
+            @include zIndex;
+        }
+    }
+    @include media(ltSm) {
+        height: calc(100vh - 60px);
+        min-height: 600px;
+
+        &_body {
+            height: calc(100vh - 60px - 75px);
+            min-height: 600px - 75px;
+        }
+        &_txt {
+            max-width: 350px;
+            margin: 0 auto 82px;
+        }
+    }
+}
+
+/*固定ボタン
+---------------------------------------------------------------------------*/
+.un_stickBtn {
+    display: none !important;
+
+    @include media(md) {
+        display: block !important;
+        position: absolute;
+        top: 120px  * .6;
+        right: 20px;
+        @include zIndex(fixed);
+
+        > a {
+            display: flex;
+            align-items: center;
+            padding: 20px * .6;
+            background-color: $gold;
+            color: $white;
+            font-size: 1.5rem * .6;
+            font-weight: normal;
+            line-height: 1.6;
+            text-decoration: none;
+            @include boxShadow_m;
+            @include hovOpacity;
+
+            img {
+                margin-right: 15px * .6;
+                width: 35px * .6;
+            }
+            span {
+                position: relative;
+
+                &::after {
+                    display: inline-block;
+                    @include chevR(.4em);
+                    transform: rotate(45deg) translateY(-50%);
+                    content: '';
+                }
+            }
+        }
+    }
+    @include media(lg) {
+        > a {
+            padding: 20px * .8;
+            font-size: 1.5rem * .8;
+            top: 120px * .8;
+
+            img {
+                margin-right: 15px * .8;
+                width: 35px * .8;
+            }
+        }
+    }
+    @include media(xl) {
+        > a {
+            padding: 20px;
+            font-size: 1.5rem;
+            top: 120px;
+
+            img {
+                margin-right: 15px;
+                width: 35px;
+            }
+        }
+    }
+}
+
+/*スマホ用固定ボタン*/
+.un_smStickBtn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include zIndex(fixed);
+
+    > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 100%;
+        background-color: $gold;
+        color: $white;
+        text-decoration: none;
+        letter-spacing: 2px;
+
+        img {
+            margin-right: 15px;
+            width: 1.6em;
+        }
+    }
+    @include media(md) {
+        display: none;
+    }
+}
+
+/*紹介
+---------------------------------------------------------------------------*/
+.un_intro {
+    &_topList {
+        > li {
+            display: grid;
+            grid-template:
+                "num catch img" auto
+                "num desc img" auto
+                / 190px 1fr 250px;
+            gap: 10px 20px;
+            margin-bottom: 55px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &_num {
+            grid-area: num;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 8rem;
+            color: $mainColor;
+            line-height: 1;
+            background: url(../img/icn/lice-crown.png) no-repeat center/contain;
+        }
+        &_txt {
+            grid-area: txt;
+            align-content: center;
+        }
+        &_catch {
+            grid-area: catch;
+            font-size: 2.4rem;
+            letter-spacing: 0;
+            font-style: italic;
+            white-space: nowrap;
+
+            > span {
+                font-size: 4rem;
+                color: $mainColor;
+            }
+        }
+        &_desc {
+            grid-area: desc;
+            @include textJustify;
+        }
+        &_img {
+            grid-area: img;
+            align-self: center;
+
+            &__pr {
+                padding: 0 70px 0 60px;
+            }
+            &__media {
+                padding: 0 4px 0 15px;
+            }
+            &__lecture {
+                padding: 0 40px 0 35px;
+            }
+        }
+    }
+    &_slider {
+        margin: 100px 0;
+    }
+    &_img {
+        padding: 0 20px;
+    }
+    &_listWrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .un_intro_list {
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &_list {
+        > li {
+            margin-bottom: 18px;
+            font-size: 1.7rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &_book {
+        position: relative;
+        padding: 36px 210px 36px 36px;
+        background-color: rgba($gold, .2);
+
+        &_txt {
+            color: $navy;
+            font-size: 3rem;
+            letter-spacing: .1em;
+            line-height: 1.8;
+        }
+        &_img {
+            position: absolute;
+            top: 50%;
+            right: 55px;
+            transform: translateY(-50%);
+            width: percentage(155 / 1000);
+        }
+    }
+}
+
+/*紹介 レスポンシブ*/
+@include media(ltXl) {
+    .un_intro {
+
+        &_topList {
+            > li {
+                grid-template:
+                    "num catch img" auto
+                    "num desc img" auto
+                    / (190px * .8) 1fr (250px * .8);
+                gap: 10px * .8 20px * .8;
+                margin-bottom: 55px * .8;
+            }
+            &_num {
+                font-size: 8rem * .8;
+            }
+            &_catch {
+                font-size: 2.4rem * .8;
+
+                > span {
+                    font-size: 4rem * .8;
+                }
+            }
+            &_img {
+                &__pr {
+                    padding: 0 70px * .8 0 60px * .8;
+                }
+                &__media {
+                    padding: 0 4px * .8 0 15px * .8;
+                }
+                &__lecture {
+                    padding: 0 40px * .8 0 35px * .8;
+                }
+            }
+        }
+        &_slider {
+            margin: 100px * .8 0;
+        }
+        &_list {
+            > li {
+                margin-bottom: 18px * .8;
+                font-size: 1.7rem * .8;
+            }
+        }
+        &_book {
+            padding: 36px * .8 210px * .8 36px * .8 36px * .8;
+
+            &_txt {
+                font-size: 3rem * .8;
+            }
+            &_img {
+                right: 55px * .8;
+            }
+        }
+    }
+}
+@include media(tabSp) {
+    .un_intro {
+        &_topList {
+            > li {
+                grid-template:
+                    "num catch img" auto
+                    "num desc img" auto
+                    / (190px * .6) 1fr (250px * .6);
+                gap: 10px * .6 20px * .6;
+                margin-bottom: 55px * .6;
+            }
+            &_num {
+                font-size: 8rem * .6;
+            }
+            &_catch {
+                font-size: 2.4rem * .6;
+
+                > span {
+                    font-size: 4rem * .6;
+                }
+            }
+            &_img {
+                &__pr {
+                    padding: 0 70px * .6 0 60px * .6;
+                }
+                &__media {
+                    padding: 0 4px * .6 0 15px * .6;
+                }
+                &__lecture {
+                    padding: 0 40px * .6 0 35px * .6;
+                }
+            }
+        }
+        &_slider {
+            margin: 100px * .6 0;
+        }
+        &_list {
+            > li {
+                margin-bottom: 18px * .6;
+                font-size: 1.7rem * .6;
+            }
+        }
+        &_book {
+            padding: 36px * .6 210px * .6 36px * .6 36px * .6;
+
+            &_txt {
+                font-size: 3rem * .6;
+            }
+            &_img {
+                right: 55px * .6;
+            }
+        }
+    }
+}
+@include media(smOnly) {
+    .un_intro {
+
+        &_topList {
+            margin-bottom: 50px;
+            > li {
+                grid-template:
+                    "num catch catch" 90px
+                    "desc desc img" auto
+                    / 90px 1fr 100px;
+                gap: 15px;
+                margin-bottom: 50px;
+            }
+            &_num {
+                font-size: 3.8rem;
+            }
+            &_catch {
+                align-self: center;
+                margin-bottom: 10px;
+                font-size: 1.6rem;
+                line-height: 1.6;
+
+                > span {
+                    font-size: 1.8rem;
+                }
+            }
+            &_desc {
+            }
+            &_img {
+                padding: 0;
+
+                &__pr {
+                    padding-left: 10px;
+                }
+                &__lecture {
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        &_slider {
+            margin: 25px 0 35px;
+
+            picture {
+                padding: 0 1.3%;
+            }
+        }
+        &_img {
+            padding: 0 30px;
+        }
+        &_listWrapper {
+            display: block;
+            padding: 0 15px;
+
+            .un_intro_list {
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &_list {
+            > li {
+                margin-bottom: 10px;
+                font-size: 1.3rem;
+                letter-spacing: 0;
+            }
+        }
+        &_book {
+            padding: 10px 115px 10px 15px;
+
+            &_txt {
+                font-size: 1.3rem;
+                letter-spacing: 0;
+            }
+            &_img {
+                right: 15px;
+                width:  95px;
+            }
+        }
+    }
+}
+
+/*問題提起
+---------------------------------------------------------------------------*/
+.un_problem {
+    padding-top: 110px;
+
+    p {
+        line-height: 1.8;
+    }
+    &_ttl {
+        position: relative;
+        line-height: 1.4;
+        color: $navy;
+        @include zIndex;
+
+        .el_txtStrong {
+            position: relative;
+            @include zIndex;
+        }
+    }
+    &_quote {
+        margin-bottom: 10px;
+        position: relative;
+        color: $mainColor;
+        font-size: 4.5rem;
+        text-align: center;
+
+        &::before,
+        &::after {
+            display: inline-block;
+            position: absolute;
+        }
+        &::before {
+            top: -0.5em;
+            left: -0.7em;
+            content: '“';
+        }
+        &::after {
+            right: 0.5em;
+            bottom: -0.8em;
+            content: '”';
+            vertical-align: bottom;
+        }
+    }
+    &_author {
+        font-size: 3rem;
+        text-align: center;
+    }
+    &_desc {
+        margin-bottom: 40px;
+        p {
+            margin-bottom: 30px;
+        }
+    }
+    &_number {
+        display: inline-block;
+        position: relative;
+        margin: 0 .5em;
+        font-size: 5rem;
+        @include zIndex(bg);
+
+        &::before {
+            display: block;
+    	    position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 128px;
+            height: 128px;
+            background-color: rgba($gold, .5);
+            border-radius: 50%;
+            content: '';
+            @include zIndex(bg);
+        }
+    }
+
+    @include media(ltXl) {
+        padding-top: 110px * .8;
+
+        &_quote {
+            margin-bottom: 10px * .8;
+            font-size: 4.5rem * .8;
+        }
+        &_desc {
+            margin-bottom: 40px * .8;
+            p {
+                margin-bottom: 30px * .8;
+            }
+        }
+        &_author {
+            font-size: 3rem * .8;
+        }
+        &_number {
+            font-size: 5rem * .8;
+
+            &::before {
+                width: 128px * .8;
+                height: 128px * .8;
+            }
+        }
+    }
+    @include media(tabSp) {
+        padding-top: 110px * .6;
+
+        &_quote {
+            margin-bottom: 10px * .6;
+            font-size: 4.5rem * .6;
+        }
+        &_desc {
+            margin-bottom: 40px * .6;
+            p {
+                margin-bottom: 30px * .6;
+            }
+        }
+        &_author {
+            font-size: 3rem * .6;
+        }
+        &_number {
+            font-size: 5rem * .6;
+
+            &::before {
+                width: 128px * .6;
+                height: 128px * .6;
+            }
+        }
+    }
+    @include media(smOnly) {
+        padding-top: 55px;
+
+        &_quote {
+            margin: 0 10px 10px;
+            font-size: 2.4rem;
+        }
+        &_desc {
+            margin-bottom: 20px;
+            p {
+                margin-bottom: 15px;
+            }
+        }
+        &_author {
+            font-size: 1.5rem;
+        }
+        &_number {
+            font-size: 2.5rem;
+            &::before {
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+}
+
+/*メリット
+---------------------------------------------------------------------------*/
+.un_merit {
+    padding-bottom: 70px;
+
+    &_list {
+        display: grid;
+        grid-template:
+            "item1 item2 item3" auto
+            / 1fr 1fr 1fr;
+        gap: 32px;
+        padding: 0 60px;
+
+        .un_merit_item {
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    grid-area: item#{$i};
+                }
+            }
+        }
+    }
+    &_item {
+        &_img {
+            margin-bottom: -70px;
+        }
+        &_lead {
+            margin-bottom: 20px;
+        }
+        &:nth-child(1) .un_merit_item_lead {
+            width: 270px;
+        }
+        &:nth-child(2) .un_merit_item_lead {
+            width: 252px;
+        }
+        &:nth-child(3) .un_merit_item_lead {
+            width: 266px;
+        }
+        &_desc {
+            color: $navy;
+            text-align: center;
+            line-height: 1.8;
+        }
+    }
+    @include media(ltXl) {
+        padding-bottom: 70px * .8;
+
+        &_list {
+            gap: 32px * .8;
+            padding: 0 60px * .8;
+        }
+        &_item {
+            &_img {
+                margin-bottom: -70px * .8;
+            }
+            &_lead {
+                margin-bottom: 20px * .8;
+            }
+            &:nth-child(1) .un_merit_item_lead {
+                width: 270px * .8;
+            }
+            &:nth-child(2) .un_merit_item_lead {
+                width: 252px * .8;
+            }
+            &:nth-child(3) .un_merit_item_lead {
+                width: 266px * .8;
+            }
+        }
+    }
+    @include media(tabSp) {
+        padding-bottom: 70px * .6;
+
+        &_list {
+            gap: 32px * .6;
+            padding: 0 60px * .6;
+        }
+        &_item {
+            &_img {
+                margin-bottom: -70px * .6;
+            }
+            &_lead {
+                margin-bottom: 20px * .6;
+            }
+            &:nth-child(1) .un_merit_item_lead {
+                width: 270px * .6;
+            }
+            &:nth-child(2) .un_merit_item_lead {
+                width: 252px * .6;
+            }
+            &:nth-child(3) .un_merit_item_lead {
+                width: 266px * .6;
+            }
+        }
+    }
+    @include media(smOnly) {
+        padding-bottom: 50px;
+
+        &_list {
+            grid-template:
+                "item1" auto
+                "item2" auto
+                "item3" auto
+                / 1fr;
+            gap: 25px;
+            padding: 0 0 0 15px;
+        }
+        &_item {
+            display: grid;
+            grid-template:
+                "img lead" auto
+                "img desc" auto
+                / 40% 1fr;
+            gap: 5px 20px;
+
+            &_img {
+                grid-area: img;
+                margin-bottom: 0;
+            }
+            &_lead {
+                grid-area: lead;
+                margin-bottom: 0;
+                padding-right: 25px;
+            }
+            &:nth-child(1) .un_merit_item_lead,
+            &:nth-child(2) .un_merit_item_lead,
+            &:nth-child(3) .un_merit_item_lead {
+                width: 100%;
+            }
+            &_desc {
+                grid-area: desc;
+                text-align: left;
+            }
+        }
+    }
+}
+
+/*声
+---------------------------------------------------------------------------*/
+.un_voice {
+}
+
+/*おすすめ
+---------------------------------------------------------------------------*/
+.un_recommend {
+    .bl_box {
+        padding: 50px 45px 70px;
+    }
+    &_itemWrapper {
+        display: grid;
+        grid-template:
+            "item1 item2" auto
+            / 1fr 1fr;
+        gap: 110px;
+        margin-bottom: 70px;
+
+        .un_recommend_item {
+            @for $i from 1 through 2 {
+                &:nth-of-type(#{$i}) {
+                    grid-area: item#{$i};
+                }
+            }
+        }
+    }
+    &_item {
+        display: flex;
+        position: relative;
+        padding: 30px 45px 45px 30px;
+        background-color: $white;
+        @include boxShadow_m;
+
+        &_txt {
+            flex: 1;
+            color: $navy;
+            font-size: 3rem;
+            line-height: 1.5;
+            white-space: nowrap;
+        }
+        &_img {
+            flex: 0 0 150px;
+            align-self: center;
+        }
+        &_catch {
+            position: absolute;
+            bottom: -32px;
+            left: -20px;
+            font-size: 3.4rem;
+            font-style: italic;
+            letter-spacing: 0;
+            line-height: 1.4;
+            white-space: nowrap;
+
+            .hp_txtMarkerRed {
+                padding-right: .4em;
+            }
+        }
+    }
+    &_txt {
+        font-size: 3.7rem;
+        color: $navy;
+        line-height: 1.8;
+        text-align: center;
+    }
+    @include media(ltXl) {
+        .bl_box {
+            padding: 50px * .8 45px * .8 70px * .8;
+        }
+        &_itemWrapper {
+            gap: 110px * .8;
+            margin-bottom: 70px * .8;
+        }
+        &_item {
+            padding: 30px * .8 45px * .8 45px * .8 30px * .8;
+
+            &_txt {
+                font-size: 3rem * .8;
+            }
+            &_img {
+                flex-basis: 150px  * .8;
+            }
+            &_catch {
+                bottom: -32px * .8;
+                left: -20px * .8;
+                font-size: 3.4rem * .8;
+            }
+        }
+        &_txt {
+            font-size: 3.7rem * .8;
+        }
+    }
+    @include media(tabSp) {
+        .bl_box {
+            padding: 50px * .6 45px * .6 70px * .6;
+        }
+        &_itemWrapper {
+            gap: 110px * .6;
+            margin-bottom: 70px * .6;
+        }
+        &_item {
+            padding: 30px * .6 45px * .6 45px * .6 30px * .6;
+
+            &_txt {
+                font-size: 3rem * .6;
+            }
+            &_img {
+                flex-basis: 150px  * .6;
+            }
+            &_catch {
+                bottom: -32px * .6;
+                left: -20px * .6;
+                font-size: 3.4rem * .6;
+            }
+        }
+        &_txt {
+            font-size: 3.7rem * .6;
+        }
+    }
+    @include media(smOnly) {
+        .bl_box {
+            padding: 25px 20px 35px;
+        }
+        &_itemWrapper {
+            grid-template:
+                "item1" auto
+                "item2" auto
+                / 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        &_item {
+            display: grid;
+            grid-template:
+                "txt   img" auto
+                "catch img" auto
+                / 1fr 28%;
+            padding: 15px 10px;
+
+            &_txt {
+                grid-area: txt;
+                font-size: 1.5rem;
+            }
+            &_img {
+                grid-area: img;
+                flex-basis: 75px;
+            }
+            &_catch {
+                grid-area: catch;
+                position: static;
+                font-size: 1.7rem;
+            }
+        }
+        &_txt {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+/*スキル
+---------------------------------------------------------------------------*/
+.un_skill {
+    padding: 80px 0 90px;
+    text-align: center;
+
+    &_img {
+        margin-bottom: 45px;
+        padding-left: 26px;
+    }
+    &_desc {
+        font-size: 2.8rem;
+    }
+    @include media(ltXl) {
+        padding: 80px * .8 0 90px * .8;
+
+        &_img {
+            padding-left: 26px * .8;
+        }
+        &_desc {
+            font-size: 2.8rem * .8;
+        }
+    }
+    @include media(tabSp) {
+        padding: 80px * .6 0 90px * .6;
+
+        &_img {
+            padding-left: 26px * .6;
+        }
+        &_desc {
+            font-size: 2.8rem * .6;
+        }
+    }
+    @include media(smOnly) {
+        padding: 25px 0 55px;
+
+        &_img {
+            margin-bottom: 25px;
+            padding-left: 0;
+        }
+        &_desc {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+/*良い点
+---------------------------------------------------------------------------*/
+.un_goodPoint {
+    padding-bottom: 120px;
+
+    &_itemList {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 -25px -75px;
+    }
+    &_item {
+        flex: 0 0 300px;
+        position: relative;
+        margin: 0 25px 75px;
+        padding: 55px 20px 25px;
+        background-color: $white;
+        @include boxShadow_m;
+        letter-spacing: 0;
+    }
+    &_label {
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: percentage(250 / 300);
+    }
+    &_img {
+        margin: 0 auto 20px;
+        width: percentage(102 / 300);
+    }
+    &_ttl {
+        margin: 0 -10px 20px;
+        color: $red;
+        font-size: 2.3rem;
+        text-align: center;
+        line-height: 1.5;
+        white-space: nowrap;
+    }
+    &_desc {
+        @include textJustify;
+    }
+    @include media(ltXl) {
+        padding-bottom: 120px * .8;
+
+        &_itemList {
+            margin: 0 -25px * .8 -75px * .8;
+        }
+        &_item {
+            flex-basis: 300px * .8;
+            margin: 0 25px * .8 75px * .8;
+            padding: 55px * .8 20px * .8 25px * .8;
+        }
+        &_label {
+            top: -24px * .8;
+        }
+        &_img {
+            margin-bottom: 20px * .8;
+        }
+        &_ttl {
+            margin: 0 -10px * .8 20px * .8;
+            font-size: 2.3rem * .8;
+        }
+    }
+    @include media(tabSp) {
+        padding-bottom: 120px * .6;
+
+        &_itemList {
+            margin: 0 -25px * .6 -75px * .6;
+        }
+        &_item {
+            flex-basis: 300px * .6;
+            margin: 0 25px * .6 75px * .6;
+            padding: 55px * .6 20px * .6 25px * .6;
+        }
+        &_label {
+            top: -24px * .6;
+        }
+        &_img {
+            margin-bottom: 20px * .6;
+        }
+        &_ttl {
+            margin: 0 -10px * .6 20px * .6;
+            font-size: 2.3rem * .6;
+        }
+    }
+    @include media(smOnly) {
+        padding-bottom: 60px;
+
+        &_itemList {
+            margin: 0 0 -32px;
+
+            .un_goodPoint_item {
+                margin: 0 15px 32px 0;
+
+                &:nth-of-type(2n) {
+                    margin-right: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        &_item {
+            flex-basis: calc((100% - 15px) / 2);
+            padding: 28px 5px 15px;
+            background-color: $white;
+            @include boxShadow_m;
+            letter-spacing: 0;
+        }
+        &_label {
+            top: -12px;
+        }
+        &_img {
+            margin-bottom: 15px;
+            width: 51px;
+        }
+        &_ttl {
+            margin: 0 -5px 10px;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+/*スキル一覧
+---------------------------------------------------------------------------*/
+.un_skillList {
+    &_desc {
+        font-size: 3.5rem;
+        text-align: center;
+        color: $red;
+
+        @include media(ltXl) {
+            font-size: 3.5rem * .8;
+        }
+        @include media(tabSp) {
+            font-size: 3.5rem * .6;
+        }
+        @include media(smOnly) {
+            font-size: 1.7rem;
+            white-space: nowrap;
+        }
+    }
+}
+
+/*サポート
+---------------------------------------------------------------------------*/
+.un_support {
+    padding: 80px 0 90px;
+    background: url(../img/bg_01.png) no-repeat center/cover;
+
+    &_ttl {
+        margin-bottom: 30px;
+        color: $white;
+        text-align: center;
+        font-size: 4.2rem;
+        letter-spacing: 0;
+
+        &_strong {
+            font-size: 5.8rem;
+            @include marker($size: 70%);
+        }
+    }
+    &_imgList {
+        display: grid;
+        grid-template:
+            "img1 img2 img3 img4" auto
+            / 1fr 1fr 1fr 1fr;
+        gap: 25px;
+
+        > li {
+            @include boxShadow_m;
+
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    grid-area: img#{$i};
+                }
+            }
+        }
+    }
+    @include media(ltXl) {
+        padding: 80px * .8 0 90px * .8;
+
+        &_ttl {
+            margin-bottom: 30px * .8;
+            font-size: 4.2rem * .8;
+
+            &_strong {
+                font-size: 5.8rem * .8;
+            }
+        }
+        &_imgList {
+            gap: 25px * .8;
+        }
+    }
+    @include media(tabSp) {
+        padding: 80px * .6 0 90px * .6;
+
+        &_ttl {
+            margin-bottom: 30px * .6;
+            font-size: 4.2rem * .6;
+
+            &_strong {
+                font-size: 5.8rem * .6;
+            }
+        }
+        &_imgList {
+            gap: 25px * .6;
+        }
+    }
+    @include media(smOnly) {
+        padding: 20px 0 35px;
+        background: url(../img/bg_01.png) no-repeat center/cover;
+
+        &_ttl {
+            margin-bottom: 30px;
+            font-size: 2.1rem;
+            line-height: 1.6;
+
+            &_strong {
+                font-size: 2.6rem;
+                @include marker($size: 70%);
+            }
+        }
+        &_imgList {
+            display: grid;
+            grid-template:
+                "img1 img2" 1fr
+                "img3 img4" 1fr
+                / 1fr 1fr;
+            gap: 12px;
+        }
+    }
+}
+
+/*メッセージ
+---------------------------------------------------------------------------*/
+.un_msg {
+    padding: 70px 0 80px;
+
+    .hp_txtMarkerBlue {
+        line-height: 1.8;
+    }
+    @include media(ltXl) {
+        padding: 70px * .8 0 80px * .8;
+    }
+    @include media(tabSp) {
+        padding: 70px * .6 0 80px * .6;
+    }
+}
+
+/*プロフィール
+---------------------------------------------------------------------------*/
+.un_profile {
+    padding-top: 110px;
+
+    &_ttl {
+        position: absolute;
+        color: $gold;
+        font-size: 3rem;
+        letter-spacing: .2em;
+        transform: translate(25px, 70px);
+    }
+    &_item {
+        margin-bottom: 110px;
+        padding-left: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &.un_profile_item__rev {
+            padding-right: 25px;
+            padding-left: 0;
+            .un_profile_img {
+                margin-right: auto;
+                margin-left: 0;
+            }
+            .un_profile_name {
+                padding: 50px 0 55px 45px;
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+    &_top {
+        margin-bottom: 45px;
+        position: relative;
+    }
+    &_img {
+        margin-left: auto;
+        width: percentage(750 / 975);
+    }
+    &_name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 50px 45px 55px 0;
+        width: percentage(475 / 975);
+        background-color: $lightBlue;
+
+        &_name {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 15px;
+            color: $navy;
+            font-size: 3.7rem;
+            letter-spacing: .1em;
+
+            > span {
+                color: $gold;
+                font-size: 2rem;
+                letter-spacing: .1em;
+            }
+        }
+    }
+    &_titleList {
+        color: $navy;
+        font-size: 1.5rem;
+        line-height: 2;
+    }
+    &_desc {
+        font-size: 1.7rem;
+        @include textJustify;
+
+        > p {
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    @include media(ltXl) {
+        padding-top: 110px * .8;
+
+        &_ttl {
+            font-size: 3rem * .8;
+            transform: translate(25px * .8, 75px);
+        }
+        &_item {
+            margin-bottom: 110px * .8;
+            padding-left: 25px * .8;
+
+            &.un_profile_item__rev {
+                padding-right: 25px * .8;
+
+                .un_profile_name {
+                    padding: 50px * .8 0 55px * .8 45px * .8;
+                }
+            }
+        }
+        &_top {
+            margin-bottom: 45px * .8;
+        }
+        &_name {
+            padding: 50px * .8 45px * .8 55px * .8 0;
+
+            &_name {
+                margin-bottom: 15px * .8;
+                font-size: 3.7rem * .8;
+
+                > span {
+                    font-size: 2rem * .8;
+                }
+            }
+        }
+        &_titleList {
+            font-size: 1.5rem * .8;
+        }
+        &_desc {
+            font-size: 1.7rem * .8;
+
+            > p {
+                margin-bottom: 30px * .8;
+            }
+        }
+    }
+    @include media(tabSp) {
+        padding-top: 110px * .6;
+
+        &_ttl {
+            font-size: 3rem * .6;
+            transform: translate(25px * .6, 56px);
+        }
+        &_item {
+            margin-bottom: 110px * .6;
+            padding-left: 25px * .6;
+
+            &.un_profile_item__rev {
+                padding-right: 25px * .6;
+
+                .un_profile_name {
+                    padding: 50px * .6 0 55px * .6 45px * .6;
+                }
+            }
+        }
+        &_top {
+            margin-bottom: 45px * .6;
+        }
+        &_name {
+            padding: 50px * .6 45px * .6 55px * .6 0;
+
+            &_name {
+                margin-bottom: 15px * .6;
+                font-size: 3.7rem * .6;
+
+                > span {
+                    font-size: 2rem * .6;
+                }
+            }
+        }
+        &_titleList {
+            font-size: 1.5rem * .6;
+        }
+        &_desc {
+            font-size: 1.7rem * .6;
+
+            > p {
+                margin-bottom: 30px * .6;
+            }
+        }
+    }
+    @include media(smOnly) {
+        padding-top: 45px;
+        padding-bottom: 80px;
+
+        &_ttl {
+            position: static;
+            text-align: center;
+            margin-bottom: 55px;
+            font-size: 2.6rem;
+            transform: translate(0);
+        }
+        &_item {
+            margin-bottom: 40px;
+            padding-left: 0;
+
+            &.un_profile_item__rev {
+                padding-right: 0;
+
+                .un_profile_name {
+                    padding: 0;
+
+                    &_name {
+                        margin-left: auto;
+                        padding: 25px 0 30px;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+        &_top {
+            margin-bottom: 20px;
+        }
+        &_img {
+            margin-left: 0;
+            width: 100%;
+        }
+        &_name {
+            position: relative;
+            margin-top: -68px;
+            padding: 0;
+            width: 100%;
+            background-color: transparent;
+
+            &_name {
+                display: flex;
+                justify-content: flex-start;
+                margin-bottom: 0;
+                padding: 25px 0 30px;
+                width: percentage(560 / 670);
+                font-size: 1.8rem;
+                background-color: $lightBlue;
+                white-space: nowrap;
+
+                > span {
+                    margin-left: 18px;
+                    font-size: 1.3rem;
+                    letter-spacing: .2em;
+                }
+            }
+        }
+        &_titleList {
+            font-size: 1.3rem;
+            white-space: nowrap;
+        }
+        &_desc {
+            font-size: 1.3rem;
+
+            > p {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+
+/*faq
+---------------------------------------------------------------------------*/
+.un_faq {
+    padding-bottom: 100px;
+
+    @include media(ltXl) {
+        padding-bottom: 100px * .8;
+    }
+    @include media(tabSp) {
+        padding-bottom: 100px * .6;
+    }
+    @include media(smOnly) {
+        padding-bottom: 50px;
+    }
+}

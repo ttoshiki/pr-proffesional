@@ -1,0 +1,299 @@
+@media screen and (max-width: 700px) {
+  .pc-none {
+    display: block;
+  }
+  .sp-none {
+    display: none;
+  }
+  .mv {
+    background-image: url(../pr-guidance-img/mv-bg-sp.png);
+    height: 694px;
+    padding: 10px;
+    border: 5px solid #202d73;
+    margin-bottom: 30px;
+  }
+  .mv::after {
+    content: "";
+    position: absolute;
+    width: 285px;
+    height: 461px;
+    background-image: url(../pr-guidance-img/mv-miki-sp.png);
+    background-size: cover;
+  }
+  .mv img {
+    width: 100px;
+    height: 30px;
+    margin-bottom: 20px;
+  }
+  .mv__title {
+    font-size: 24px;
+    letter-spacing: 1.44px;
+    width: 345px;
+    height: 113px;
+    margin-bottom: 233px;
+  }
+  .mv__title span {
+    padding: 15px 10px;
+  }
+  .mv__txt-1 {
+    font-size: 14px;
+    letter-spacing: 0.22px;
+    margin-bottom: 10px;
+  }
+  .mv__txt-5 {
+    line-height: 1.3;
+  }
+  .mv__txt-5 span {
+    font-size: 18px;
+    letter-spacing: 0.81px;
+    line-height: 1.5;
+    padding: 0 5px;
+    background: #fff;
+    display: initial;
+    font-weight: 700;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .mv__txt-3 {
+    font-size: 16px;
+    letter-spacing: 0.26px;
+    width: 335px;
+    margin: 13px auto;
+  }
+  .mv__txt-4 {
+    font-size: 14px;
+    width: 345px;
+    height: 93px;
+    margin-bottom: 5px;
+  }
+  /* s1 */
+  .s1 {
+    margin: 0 auto 50px;
+  }
+  .s1 p::before {
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+    padding-right: 15px;
+    top: 1px;
+  }
+  /* member-comment */
+  .member-comment {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  .member-comment__group {
+    margin-bottom: 15px;
+  }
+  .member-comment__group img {
+    width: 100px;
+    height: 100px;
+  }
+  .member-comment__wrap {
+    width: calc(100% - 110px);
+    padding-bottom: 10px;
+  }
+  .member-comment__lead {
+    margin-bottom: 10px;
+  }
+  .member-comment__name {
+    margin-bottom: 5px;
+  }
+  .member-comment__txt {
+    padding-bottom: 30px;
+  }
+  /* lecturer */
+  .lecturer-picture {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+  .lecturer-comment {
+    width: 90%;
+  }
+  .lecturer-comment--mb70 {
+    margin-bottom: 35px;
+  }
+  .lecturer-comment--mb100 {
+    margin-bottom: 50px;
+  }
+  .lecturer-my-story {
+    margin-bottom: 30px;
+  }
+  .lecturer__name {
+    font-size: 20px;
+    letter-spacing: 0.8px;
+  }
+  .lecturer__name-romaji {
+    margin-bottom: 15px;
+  }
+  .lecturer__social-position {
+    margin-bottom: 30px;
+  }
+  /* skill */
+  .skill {
+    width: 95%;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    border: solid 1px #dddddd;
+  }
+  .skill__group {
+    display: block;
+  }
+  .skill__img {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 130px;
+    height: 87px;
+  }
+  .skill__wrap {
+    padding: 20px 15px;
+    border: solid 1px #dddddd;
+    max-width: 100%;
+  }
+  .skill__title {
+    justify-content: center;
+    line-height: 1.3;
+  }
+  .skill__title::before {
+    display: table;
+    width: 18px;
+    height: 18px;
+    background: url(../pr-guidance-img/rose.png) no-repeat left;
+    background-size: 18px 18px;
+    padding-right: 10px;
+  }
+  /* lessons-menu */
+  .lessons-menu {
+    width: 90%;
+  }
+  .lessons-menu__title {
+    padding: 20px 0;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+  }
+  .lessons-menu__wrap {
+    padding: 20px 10px 20px;
+  }
+  .lessons-menu__sub-title {
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .lessons-menu__sub-title::before {
+    padding-right: 20px;
+  }
+  /* work-support */
+  .work-support {
+    padding: 40px 20px;
+    max-width: 90%;
+    margin-bottom: 30px;
+    border: solid 1px #dddddd;
+  }
+  .work-support__title {
+    margin-bottom: 20px;
+  }
+  /* work-flow */
+  .work-flow {
+    width: 90%;
+    margin-bottom: 50px;
+  }
+  .work-flow__group {
+    padding: 0 20px;
+  }
+  /* achievement */
+  .achievement__title {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 90%;
+  }
+  .achievement__area {
+    display: block;
+    text-align: center;
+    width: 90%;
+  }
+  .achievement__trophy {
+    width: 150px;
+    height: 113px;
+    margin-bottom: 10px;
+  }
+  .achievement__txt {
+    max-width: 540px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  .achievement__image--mr {
+    margin-right: auto;
+  }
+  /* media */
+  .media {
+    width: 90%;
+  }
+  .media__name {
+    line-height: 1;
+  }
+  .media__image {
+    width: 115px;
+    margin-left: 5px;
+  }
+  /* book */
+  .book {
+    width: 90%;
+    padding: 30px 20px;
+    margin-bottom: 50px;
+    border: solid 1px #dddddd;
+  }
+  .book__image {
+    width: 100px;
+    margin-right: 10px;
+  }
+  /* induction */
+  .induction-txt {
+    width: 90%;
+    padding: 30px 20px;
+    margin-bottom: 100px;
+  }
+  .induction-txt::after {
+    width: 100px;
+    height: 40px;
+    background-size: 100px 40px;
+    bottom: -70px;
+  }
+  /* lecture-otd */
+  .lecture-otd {
+    width: 90%;
+    margin-bottom: 50px;
+  }
+  .lecture-otd__title::before {
+    padding-right: 15px;
+  }
+  .lecture-otd__title {
+    margin-bottom: 25px;
+    line-height: 1.3;
+  }
+  /* summary */
+  .summary {
+    padding: 15px 0;
+  }
+  .summary__area {
+    width: 90%;
+  }
+  .schedule__txt {
+    padding: 20px 5px 0;
+  }
+  .schedule__wrap {
+    padding: 20px 10px 30px;
+    max-width: 355px;
+  }
+  .schedule__item span {
+    font-size: 18px;
+    letter-spacing: 0.65px;
+    margin-left: 10px;
+  }
+  .summary__txt {
+    padding: 0 5px;
+    margin: 20px auto 30px;
+  }
+}

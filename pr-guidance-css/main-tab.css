@@ -1,0 +1,70 @@
+@media screen and (max-width: 1000px) {
+  .mv {
+    height: 900px;
+    background-position: bottom;
+  }
+  .mv::after {
+    left: 0;
+    margin: auto;
+  }
+  .mv__title {
+    margin-bottom: 320px;
+  }
+  .mv__txt-2 {
+    background: #fff;
+    display: initial;
+    margin-left: 0;
+    line-height: 1.8;
+  }
+  .mv__txt-3 {
+    margin-top: 15px;
+    background: #fff;
+    width: 520px;
+    padding: 5px 3px;
+  }
+  .mv__txt-4 {
+    left: 0;
+    margin: 0 auto 10px;
+  }
+  /* s1 */
+  .s1 {
+    width: 90%;
+  }
+  /* member-comment */
+  .member-comment {
+    width: 90%;
+  }
+  .member-comment__wrap {
+    width: calc(100% - 180px);
+  }
+  .lessons-menu {
+    width: 90%;
+  }
+  .lecturer-comment {
+    width: 90%;
+  }
+  .skill {
+    width: 95%;
+  }
+  .skill__title::before {
+    padding-right: 15px;
+  }
+  .skill__wrap {
+    max-width: calc(100% - 270px);
+  }
+  .work-support {
+    max-width: 90%;
+  }
+  .achievement__area {
+    max-width: 90%;
+  }
+  .induction-txt {
+    width: 90%;
+  }
+  .lecture-otd {
+    width: 90%;
+  }
+  .summary__area {
+    width: 90%;
+  }
+}

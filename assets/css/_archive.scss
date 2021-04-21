@@ -1,0 +1,53 @@
+@import "variables";
+
+.announcement-page {
+    & .entry-title {
+        margin-top: 0;
+    }
+    & .heading2 {
+        font-size: 30px;
+        color: $brand-color;
+        margin-bottom: 32px;
+        padding-top: 80px;
+        text-align: center;
+    }
+    & .sec-inner {
+        @include content-width;
+        width: 64%;
+        margin-top: 80px;
+    }
+    & .sec {
+        margin-bottom: 80px;
+    }
+    & .announcement-list {
+        display: flex;
+        margin-bottom: 32px;
+    }
+    & .day {
+        margin-right: 40px;
+    }
+
+}
+
+@media screen and (max-width:1096px) {
+    .announcement-page {
+        & .sec-inner {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .announcement-page {
+        & .sec-inner {
+            width: 90%;
+        }
+        & .announcement-list {
+            display: block;
+        }
+        & .day {
+            display: block;
+            margin: 0 0 8px 0;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+/* グリッドブロックグループ（自作グループ）
+
+・グリッドレイアウトのクラスを管理
+・Bootstrap4のグリッドシステムがベース
+========================================================== */
+// 変数とミックスインをインポート
+@import "_variable";
+@import "_mixin";
+// ******************* ここから記述 *******************
+
+/*グリッドコンテナ
+---------------------------------------------------------------------------*/
+.gr_cont {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/*グリッドアイテム
+---------------------------------------------------------------------------*/
+/*------- 列の結合*/
+.gr_item {
+    &.gr_item__colspan2 { grid-column-end: span 2; }
+    &.gr_item__colspan3 { grid-column-end: span 3; }
+    &.gr_item__colspan4 { grid-column-end: span 4; }
+    &.gr_item__colspan5 { grid-column-end: span 5; }
+    &.gr_item__colspan6 { grid-column-end: span 6; }
+    &.gr_item__colspan7 { grid-column-end: span 7; }
+    &.gr_item__colspan8 { grid-column-end: span 8; }
+    &.gr_item__colspan9 { grid-column-end: span 9; }
+    &.gr_item__colspan10 { grid-column-end: span 10; }
+    &.gr_item__colspan11 { grid-column-end: span 11; }
+    &.gr_item__colspan12 { grid-column-end: span 12; }
+}
+
+/*------- 行の結合*/
+.gr_item {
+    &.gr_item__rowspan2 { grid-row-end: span 2; }
+    &.gr_item__rowspan3 { grid-row-end: span 3; }
+    &.gr_item__rowspan4 { grid-row-end: span 4; }
+    &.gr_item__rowspan5 { grid-row-end: span 5; }
+    &.gr_item__rowspan6 { grid-row-end: span 6; }
+    &.gr_item__rowspan7 { grid-row-end: span 7; }
+    &.gr_item__rowspan8 { grid-row-end: span 8; }
+    &.gr_item__rowspan9 { grid-row-end: span 9; }
+    &.gr_item__rowspan10 { grid-row-end: span 10; }
+    &.gr_item__rowspan11 { grid-row-end: span 11; }
+    &.gr_item__rowspan12 { grid-row-end: span 12; }
+}
+
+/*------- 開始列の指定*/
+/*指定されたグリッドアイテムの開始列を指定*/
+.gr_item {
+    .gr_item__col1 { grid-column-start: 1; }
+    .gr_item__col2 { grid-column-start: 2; }
+    .gr_item__col3 { grid-column-start: 3; }
+    .gr_item__col4 { grid-column-start: 4; }
+    .gr_item__col5 { grid-column-start: 5; }
+    .gr_item__col6 { grid-column-start: 6; }
+    .gr_item__col7 { grid-column-start: 7; }
+    .gr_item__col8 { grid-column-start: 8; }
+    .gr_item__col9 { grid-column-start: 9; }
+    .gr_item__col10 { grid-column-start: 10; }
+    .gr_item__col11 { grid-column-start: 11; }
+    .gr_item__col12 { grid-column-start: 12; }
+}

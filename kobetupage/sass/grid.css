@@ -1,0 +1,191 @@
+@charset "UTF-8";
+/* グリッドブロックグループ（自作グループ）
+
+・グリッドレイアウトのクラスを管理
+・Bootstrap4のグリッドシステムがベース
+========================================================== */
+/*グリッドコンテナ
+---------------------------------------------------------------------------*/
+.gr_cont {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+}
+
+/*グリッドアイテム
+---------------------------------------------------------------------------*/
+/*------- 列の結合*/
+.gr_item.gr_item__colspan2 {
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+}
+
+.gr_item.gr_item__colspan3 {
+  -ms-grid-column-span: 3;
+      grid-column-end: span 3;
+}
+
+.gr_item.gr_item__colspan4 {
+  -ms-grid-column-span: 4;
+      grid-column-end: span 4;
+}
+
+.gr_item.gr_item__colspan5 {
+  -ms-grid-column-span: 5;
+      grid-column-end: span 5;
+}
+
+.gr_item.gr_item__colspan6 {
+  -ms-grid-column-span: 6;
+      grid-column-end: span 6;
+}
+
+.gr_item.gr_item__colspan7 {
+  -ms-grid-column-span: 7;
+      grid-column-end: span 7;
+}
+
+.gr_item.gr_item__colspan8 {
+  -ms-grid-column-span: 8;
+      grid-column-end: span 8;
+}
+
+.gr_item.gr_item__colspan9 {
+  -ms-grid-column-span: 9;
+      grid-column-end: span 9;
+}
+
+.gr_item.gr_item__colspan10 {
+  -ms-grid-column-span: 10;
+      grid-column-end: span 10;
+}
+
+.gr_item.gr_item__colspan11 {
+  -ms-grid-column-span: 11;
+      grid-column-end: span 11;
+}
+
+.gr_item.gr_item__colspan12 {
+  -ms-grid-column-span: 12;
+      grid-column-end: span 12;
+}
+
+/*------- 行の結合*/
+.gr_item.gr_item__rowspan2 {
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+}
+
+.gr_item.gr_item__rowspan3 {
+  -ms-grid-row-span: 3;
+      grid-row-end: span 3;
+}
+
+.gr_item.gr_item__rowspan4 {
+  -ms-grid-row-span: 4;
+      grid-row-end: span 4;
+}
+
+.gr_item.gr_item__rowspan5 {
+  -ms-grid-row-span: 5;
+      grid-row-end: span 5;
+}
+
+.gr_item.gr_item__rowspan6 {
+  -ms-grid-row-span: 6;
+      grid-row-end: span 6;
+}
+
+.gr_item.gr_item__rowspan7 {
+  -ms-grid-row-span: 7;
+      grid-row-end: span 7;
+}
+
+.gr_item.gr_item__rowspan8 {
+  -ms-grid-row-span: 8;
+      grid-row-end: span 8;
+}
+
+.gr_item.gr_item__rowspan9 {
+  -ms-grid-row-span: 9;
+      grid-row-end: span 9;
+}
+
+.gr_item.gr_item__rowspan10 {
+  -ms-grid-row-span: 10;
+      grid-row-end: span 10;
+}
+
+.gr_item.gr_item__rowspan11 {
+  -ms-grid-row-span: 11;
+      grid-row-end: span 11;
+}
+
+.gr_item.gr_item__rowspan12 {
+  -ms-grid-row-span: 12;
+      grid-row-end: span 12;
+}
+
+/*------- 開始列の指定*/
+/*指定されたグリッドアイテムの開始列を指定*/
+.gr_item .gr_item__col1 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+}
+
+.gr_item .gr_item__col2 {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+
+.gr_item .gr_item__col3 {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+}
+
+.gr_item .gr_item__col4 {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+}
+
+.gr_item .gr_item__col5 {
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+}
+
+.gr_item .gr_item__col6 {
+  -ms-grid-column: 6;
+      grid-column-start: 6;
+}
+
+.gr_item .gr_item__col7 {
+  -ms-grid-column: 7;
+      grid-column-start: 7;
+}
+
+.gr_item .gr_item__col8 {
+  -ms-grid-column: 8;
+      grid-column-start: 8;
+}
+
+.gr_item .gr_item__col9 {
+  -ms-grid-column: 9;
+      grid-column-start: 9;
+}
+
+.gr_item .gr_item__col10 {
+  -ms-grid-column: 10;
+      grid-column-start: 10;
+}
+
+.gr_item .gr_item__col11 {
+  -ms-grid-column: 11;
+      grid-column-start: 11;
+}
+
+.gr_item .gr_item__col12 {
+  -ms-grid-column: 12;
+      grid-column-start: 12;
+}
+/*# sourceMappingURL=grid.css.map */

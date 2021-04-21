@@ -1,0 +1,409 @@
+// ミックスイン
+
+// 変数をインポート
+@import "_variable";
+
+// ******************* ここから記述 *******************
+
+// メディアクエリ
+// ---------------------------------------------------------------------------
+@mixin media($bp) {
+  @media #{map-get($bpList, $bp)} {
+    @content;
+  }
+}
+
+// ===========================================================================
+// 単一プロパティ
+// ===========================================================================
+
+// transition
+// ---------------------------------------------------------------------------
+@mixin transition($duration: .25s, $ease: ease-out) {
+    transition: all $duration $ease;
+}
+
+// フォントサイズ
+// ---------------------------------------------------------------------------
+// ------- 最小
+@mixin fsz_xs {
+    font-size: 1rem;
+}
+// ------- 小
+@mixin fsz_s {
+    font-size: 1.4rem;
+}
+// ------- 標準
+@mixin fsz_m {
+    font-size: 2rem;
+}
+// ------- 大
+@mixin fsz_l {
+    font-size: 2rem;
+}
+// ------- 特大
+@mixin fsz_xl {
+    font-size: 2.8rem;
+}
+// ------- スマホ標準
+@mixin fsz_sp {
+    font-size: 1.5rem;
+}
+
+// font-family
+// ---------------------------------------------------------------------------
+@mixin font_base($w: 400) {
+    font-family: YuGothic, "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Helvetica Neue", Arial, Meiryo, sans-serif;
+    font-weight: $w;
+}
+@mixin font_title($w: 700) {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: $w;
+}
+@mixin font_serif($w: 400) {
+    font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+    font-weight: $w;
+}
+
+// shadow
+// ---------------------------------------------------------------------------
+@mixin boxShadow_s {
+    box-shadow: 0 .25rem .4rem rgba(0,0,0,.25);
+}
+@mixin boxShadow_m {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+@mixin boxShadow_l {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+}
+@mixin boxShadow_xl {
+    box-shadow: 0 1rem 3rem 1rem rgba(0,0,0,.2);
+}
+@mixin textShadow {
+    text-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+// グラデーション
+// ---------------------------------------------------------------------------
+@mixin gradation($deg: 120deg, $color: $mainColor) {
+    background: -moz-linear-gradient($deg, $color, darken($color, 30%));
+    background: -webkit-linear-gradient($deg, $color, darken($color, 30%));
+    background: linear-gradient($deg, $color, darken($color, 30%));
+}
+
+// z-index
+// ---------------------------------------------------------------------------
+$layer: (
+    top: 101,
+    modal: 100,
+    fixed: 20,
+    default: 1,
+    bg: -1,
+    bottom: -2
+);
+@mixin zIndex($key: default) {
+    z-index: map-get($layer, $key);
+}
+
+// text-justify（テキスト両端揃え）
+// ---------------------------------------------------------------------------
+@mixin textJustify {
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+// CSSフィルター
+// ---------------------------------------------------------------------------
+// ------- 明度
+@mixin filterBright($per: 60%) {
+    -webkit-filter: brightness($per);
+    -moz-filter: brightness($per);
+    -o-filter: brightness($per);
+    -ms-filter: brightness($per);
+    filter: brightness($per);
+}
+
+// ===========================================================================
+// ブラウザ対応
+// ===========================================================================
+
+// object-fit
+// ---------------------------------------------------------------------------
+@mixin objectFC {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+}
+
+// 縦書き
+// ---------------------------------------------------------------------------
+@mixin vertWrite {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    -o-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+
+// IEのみに適応
+// ---------------------------------------------------------------------------
+@mixin ie-style {
+    @media all and (-ms-high-contrast: none) {
+    /* IEのみのスタイル */
+        @content;
+    }
+}
+
+// ===========================================================================
+// 複合プロパティ
+// ===========================================================================
+
+// コンテナ
+// ---------------------------------------------------------------------------
+// ------- 標準
+@mixin container($w: $contWidth_xl, $space: $side) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: $space;
+    padding-left: $space;
+
+    @include media(sm) {
+        max-width: 540px;
+    }
+    @include media(md) {
+        max-width: 720px;
+    }
+    @include media(lg) {
+        max-width: 960px;
+    }
+    @include media(xl) {
+        max-width: $w;
+    }
+}
+
+// ------- 少サイズ
+@mixin container_s($w: $contWidth_s, $space: $side) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: $space;
+    padding-left: $space;
+
+    @include media(sm) {
+        max-width: 540px;
+    }
+    @include media(md) {
+        max-width: 720px - ($contWidth_xl - $contWidth_s) / 2;
+    }
+    @include media(lg) {
+        max-width: $w;
+    }
+}
+
+// ------- 全幅
+@mixin container-fluid($w: $contWidth_xl, $space: $side) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: $space;
+    padding-left: $space;
+    max-width: $w;
+}
+
+// ------- 右寄せ
+@mixin container-right-fluid($w: $contWidth_xl, $space: $side) {
+    margin-left: auto;
+    padding-left: $space;
+    width: 100%;
+
+    @include media(sm) {
+        max-width: calc(100% - (100% - 540px) / 2);
+    }
+    @include media(md) {
+        max-width: calc(100% - (100% - 720px) / 2);
+    }
+    @include media(lg) {
+        max-width: calc(100% - (100% - 960px) / 2);
+    }
+    @include media(xl) {
+        max-width: calc(100% - (100% - #{$w}) / 2);
+    }
+}
+
+// ------- 左寄せ
+@mixin container-left-fluid($w: $contWidth_xl, $space: $side) {
+    margin-right: auto;
+    padding-right: $space;
+    width: 100%;
+
+    @include media(sm) {
+        max-width: calc(100% - (100% - 540px) / 2);
+    }
+    @include media(md) {
+        max-width: calc(100% - (100% - 720px) / 2);
+    }
+    @include media(lg) {
+        max-width: calc(100% - (100% - 960px) / 2);
+    }
+    @include media(xl) {
+        max-width: calc(100% - (100% - #{$w}) / 2);
+    }
+}
+
+// padding space
+// ---------------------------------------------------------------------------
+// ------- 左スペース
+@mixin pd-l-space($side: $side) {
+    padding-left: $side;
+
+    @include media(sm) {
+        padding-left: calc((100% - 540px) / 2);
+    }
+    @include media(md) {
+        padding-left: calc((100% - 720px) / 2);
+    }
+    @include media(lg) {
+        padding-left: calc((100% - 960px) / 2);
+    }
+    @include media(xl) {
+        padding-left: calc((100% - #{$contWidth_xl}) / 2);
+    }
+}
+// ------- 右スペース
+@mixin pd-r-space($side: $side) {
+    padding-right: $side;
+
+    @include media(sm) {
+        padding-right: calc((100% - 540px) / 2);
+    }
+    @include media(md) {
+        padding-right: calc((100% - 720px) / 2);
+    }
+    @include media(lg) {
+        padding-right: calc((100% - 960px) / 2);
+    }
+    @include media(xl) {
+        padding-right: calc((100% - #{$contWidth_xl}) / 2);
+    }
+}
+
+// トリミング
+// ---------------------------------------------------------------------------
+// ------- 画像
+@mixin trim($h: 9, $w: 16) {
+    position: relative;
+    padding-top: percentage($h / $w);
+    overflow: hidden;
+
+    > img {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translateY(-50%);
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+    }
+}
+
+// 背景画像
+// ---------------------------------------------------------------------------
+@mixin bgimgSet {
+    background: {
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+    }
+}
+
+// カラム
+// ---------------------------------------------------------------------------
+@mixin colCalc($col, $mr) {
+    width: calc((100% - #{$mr} * #{$col - 1}) / #{$col});
+    margin-right: $mr - 1; //ブラウザによるカラム落ちを防ぐためにあえて1px小さく設定
+
+    &:nth-of-type(#{$col}n) {
+        margin-right: 0;
+    }
+}
+
+// ホバー
+// ---------------------------------------------------------------------------
+// ------- opacity
+@mixin hovOpacity($o: $opacity) {
+    @include transition;
+    @content;
+
+    &:focus,
+    &:hover {
+        opacity: $o;
+    }
+}
+// ------- 下線
+@mixin hovUnderline {
+    @content;
+
+    &:focus,
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@mixin marker($color: rgba(#c7a44b, .5), $size: 50%) {
+    display: inline;
+    background: linear-gradient(transparent $size, $color 0%) !important;
+}
+
+// ===========================================================================
+// アイコン
+// ===========================================================================
+
+// 矢印
+// ---------------------------------------------------------------------------
+// ------- 上
+@mixin chevT($size: .6em, $weight: .08em, $color: $white) {
+    width: $size;
+    height: $size;
+    border-top: $weight solid $color;
+    border-right: $weight solid $color;
+    transform: rotate(-45deg) translateY(-30%);
+}
+// ------- 右（>）
+@mixin chevR($size: .6em, $weight: .08em, $color: $white) {
+    width: $size;
+    height: $size;
+    border-top: $weight solid $color;
+    border-right: $weight solid $color;
+    transform: rotate(45deg) translateY(-30%);
+}
+// ------- 左（<）
+@mixin chevL($size: .6em, $weight: .08em, $color: $white) {
+    width: $size;
+    height: $size;
+    border-bottom: $weight solid $color;
+    border-left: $weight solid $color;
+    transform: rotate(45deg) translateY(-30%);
+}
+// ------- 下
+@mixin chevB($size: .6em, $weight: .08em, $color: $white) {
+    width: $size;
+    height: $size;
+    border-bottom: $weight solid $color;
+    border-left: $weight solid $color;
+    transform: rotate(-45deg) translateY(-30%);
+}
+
+// ＋（疑似要素）
+// ---------------------------------------------------------------------------
+@mixin plus($size: 25px, $color: $white) {
+    &::before,
+    &::after {
+        display: block;
+        position: absolute;
+        width: $size;
+        height: 1px;
+        background-color: $color;
+        content: '';
+        @content;
+        @include zIndex;
+    }
+    &::after {
+        transform: rotate(90deg);
+    }
+}

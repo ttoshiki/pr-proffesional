@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+/*  font-color */
+.color--navy {
+  color: #202d73;
+}
+.color--black {
+  color: #333333;
+}
+.color--red {
+  color: #fc3466;
+  font-weight: bold;
+}
+.color--blue {
+  color: #0c7fdd;
+  font-weight: bold;
+}
+.color--white {
+  color: #ffffff;
+}
+/*  background-color */
+.bg-color--navy {
+  background-color: #202d73;
+}
+.bg-color--light-blue {
+  background-color: #dceefd;
+}
+.bg-color--gray {
+  background-color: #fafafa;
+}
+.bg-color--gold {
+  background-color: #d2b369;
+}
+.bg-color--white {
+  background-color: #ffffff;
+}
+.bg-color--blue {
+  background-color: #6bb6f3;
+}
+/* font-size */
+.font-size--30px {
+  font-size: 30px;
+  letter-spacing: 1.8px;
+  line-height: 1;
+  font-family: YuGothic, "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W3", sans-serif;
+}
+.font-size--25px {
+  font-size: 25px;
+  letter-spacing: 1.25px;
+  line-height: 1;
+  font-family: YuGothic, "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W3", sans-serif;
+}
+.font-size--24px {
+  font-size: 24px;
+  letter-spacing: 1.06px;
+  line-height: 1.5;
+  font-family: YuGothic, "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W3", sans-serif;
+}
+.font-size--22px {
+  font-size: 22px;
+  letter-spacing: 0.79px;
+  line-height: 1;
+  font-family: YuGothic, "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W3", sans-serif;
+}
+.font-size--18px {
+  font-size: 18px;
+  letter-spacing: 0.65px;
+  line-height: 1.5;
+  font-family: YuGothic, "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W3", sans-serif;
+}
+.font-size--16px {
+  font-size: 16px;
+  letter-spacing: 0.51px;
+  line-height: 1;
+  font-family: YuGothic, "Yu Gothic", "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W3", sans-serif;
+}
+.font-size--14px {
+  font-size: 14px;
+  letter-spacing: 0.39px;
+  line-height: 1;
+  font-family: "Arial", sans-serif;
+}
+@media screen and (max-width: 700px) {
+  .font-size--30px {
+    font-size: 20px;
+    letter-spacing: 0.7px;
+    line-height: 1.5;
+  }
+  .font-size--25px {
+    font-size: 18px;
+    letter-spacing: 0.65px;
+    line-height: 1.5;
+  }
+  .font-size--24px {
+    font-size: 18px;
+    letter-spacing: 0.65px;
+  }
+  .font-size--22px {
+    font-size: 20px;
+    letter-spacing: 0.8px;
+  }
+  .font-size--18px {
+    font-size: 16px;
+    letter-spacing: 0.51px;
+  }
+  .font-size--16px {
+    font-size: 14px;
+    letter-spacing: 0.39px;
+  }
+  .font-size--14px {
+    font-size: 12px;
+    letter-spacing: 0.31px;
+  }
+}
+/* font-weight */
+.blod {
+  font-weight: bold;
+}
+.medium {
+  font-weight: normal;
+}
+.regular {
+  font-weight: 400;
+  font-family: "Sawarabi Mincho", sans-serif;
+}
+/* font-family */
+.nsj--b {
+  font-weight: 700;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.nsj--m {
+  font-weight: 500;
+  font-family: "Noto Sans JP", sans-serif;
+}
+/* link-button */
+.link-button {
+  padding: 15px 40px;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  font-weight: 500;
+  font-family: "Noto Sans JP", sans-serif;
+  position: relative;
+  width: 510px;
+  height: 70px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 50px;
+}
+.link-button::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../pr-guidance-img/link-arrow.png") no-repeat right;
+  background-size: 30px 30px;
+  padding-left: 10px;
+  top: 1px;
+}
+.entry-button {
+  padding: 15px 40px;
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: 0;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  font-weight: 500;
+  font-family: "Noto Sans JP", sans-serif;
+  position: relative;
+  width: 390px;
+  height: 75px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 100px;
+}
+.entry-button::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: url("../pr-guidance-img/link-arrow.png") no-repeat right;
+  background-size: 25px 25px;
+  padding-left: 10px;
+  top: 1px;
+}
+@media screen and (max-width: 700px) {
+  .link-button {
+    padding: 15px 25px;
+    font-size: 18px;
+    width: 340px;
+    height: 60px;
+    margin-bottom: 30px;
+  }
+  .link-button::after {
+    width: 18px;
+    height: 18px;
+    background-size: 18px 18px;
+    padding-left: 5px;
+  }
+  .entry-button {
+    padding: 15px 25px;
+    font-size: 18px;
+    width: 310px;
+    height: 60px;
+    margin-bottom: 30px;
+  }
+  .entry-button::after {
+    width: 18px;
+    height: 18px;
+    background-size: 18px 18px;
+    padding-left: 5px;
+  }
+}
+/* sub-title */
+.sub-title {
+  text-align: center;
+  padding: 80px 0 60px;
+  border-bottom: solid 20px #edf6fe;
+  position: relative;
+  margin-bottom: 100px;
+}
+.sub-title::after {
+  content: "";
+  position: relative;
+  border-bottom: solid 1px #202d73;
+  display: block;
+  margin: auto;
+  padding-top: 15px;
+}
+.sub-title--seminar1 {
+  border-bottom: solid 20px #9096b9;
+}
+.sub-title--seminar1::after {
+  border-bottom: solid 1px #ffffff;
+  width: 282px;
+}
+.sub-title--seminar2 {
+  border-bottom: solid 20px #9096b9;
+}
+.sub-title--seminar2::after {
+  border-bottom: solid 1px #ffffff;
+  width: 63px;
+}
+.sub-title--s1::after {
+  width: 442px;
+}
+.sub-title--s2::after {
+  width: 710px;
+}
+.sub-title--s3::after {
+  width: 317px;
+}
+.sub-title--s4::after {
+  width: 490px;
+}
+.sub-title--s5::after {
+  width: 662px;
+}
+.sub-title--s6 {
+  margin-bottom: 50px;
+}
+.sub-title--s6::after {
+  width: 690px;
+}
+.sub-title--s7::after {
+  width: 284px;
+}
+.sub-title--s8::after {
+  width: 140px;
+}
+.sub-title--s9::after {
+  width: 412px;
+}
+.sub-title--s10::after {
+  width: 996px;
+}
+@media screen and (max-width: 1000px) {
+  .sub-title--s10::after {
+    width: 742px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .sub-title {
+    padding: 60px 10px 40px;
+    border-bottom: solid 15px #edf6fe;
+    margin-bottom: 50px;
+  }
+  .sub-title--seminar1 {
+    border-bottom: solid 15px #9096b9;
+  }
+  .sub-title--seminar1::after {
+    width: 183px;
+  }
+  .sub-title--seminar2 {
+    border-bottom: solid 15px #9096b9;
+  }
+  .sub-title--seminar2::after {
+    width: 41px;
+  }
+  .sub-title--s1::after {
+    width: 288px;
+    padding-top: 10px;
+  }
+  .sub-title--s2::after {
+    width: 338px;
+  }
+  .sub-title--s3::after {
+    width: 206px;
+  }
+  .sub-title--s4::after {
+    width: 319px;
+  }
+  .sub-title--s5::after {
+    width: 347px;
+  }
+  .sub-title--s6 {
+    margin-bottom: 30px;
+  }
+  .sub-title--s6::after {
+    width: 337px;
+  }
+  .sub-title--s7::after {
+    width: 184px;
+  }
+  .sub-title--s8::after {
+    width: 91px;
+  }
+  .sub-title--s9::after {
+    width: 268px;
+  }
+  .sub-title--s10::after {
+    width: 339px;
+  }
+}

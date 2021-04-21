@@ -1,0 +1,213 @@
+/* レイアウトグループ
+
+・ヘッダー、ボディエリア、メインエリア、サイドエリア、フッター等の大きなレイアウトを形成する要素に使用
+========================================================== */
+// 変数とミックスインをインポート
+@import "_variable";
+@import "_mixin";
+
+
+// ******************* ここから記述 *******************
+
+/*コンテナ
+---------------------------------------------------------------------------*/
+.ly_contXl {
+    margin: 0 auto;
+    padding: 0 $side;
+    width: 100%;
+
+    @include media(sm) {
+        max-width: 540px;
+    }
+    @include media(md) {
+        max-width: 720px;
+    }
+    @include media(lg) {
+        max-width: 960px;
+    }
+    @include media(xl) {
+        max-width: $contWidth_xl + $side * 2;
+    }
+}
+
+.ly_contL {
+    margin: 0 auto;
+    padding: 0 $side;
+    width: 100%;
+
+    @include media(sm) {
+        max-width: 540px;
+    }
+    @include media(md) {
+        max-width: 700px;
+    }
+    @include media(lg) {
+        max-width: 940px;
+    }
+    @include media(xl) {
+        max-width: $contWidth_l + $side * 2;
+    }
+}
+
+.ly_contM {
+    margin: 0 auto;
+    padding: 0 $side;
+    width: 100%;
+
+    @include media(sm) {
+        max-width: 540px;
+    }
+    @include media(md) {
+        max-width: 680px;
+    }
+    @include media(lg) {
+        max-width: 920px;
+    }
+    @include media(xl) {
+        max-width: $contWidth_m + $side * 2;
+    }
+}
+
+.ly_contS {
+    margin: 0 auto;
+    padding: 0 $side;
+    width: 100%;
+
+    @include media(sm) {
+        max-width: 450px;
+    }
+    @include media(md) {
+        max-width: 530px;
+    }
+    @include media(lg) {
+        max-width: 700px;
+    }
+    @include media(xl) {
+        max-width: $contWidth_s+ $side * 2;
+    }
+}
+
+.ly_contXs {
+    margin: 0 auto;
+    padding: 0 $side;
+    width: 100%;
+
+    @include media(sm) {
+        max-width: 420px;
+    }
+    @include media(md) {
+        max-width: 470px;
+    }
+    @include media(lg) {
+        max-width: 620px;
+    }
+    @include media(xl) {
+        max-width: 690px + $side * 2;
+    }
+}
+
+
+/*カラム
+---------------------------------------------------------------------------*/
+.ly_col {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+        width: 100%;
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @include media(md) {
+        &.ly_col__2 {
+            > * {
+                $ml: 50px * .6;
+                $col: 2;
+                width: calc((100% - #{$ml} * #{$col - 1}) / #{$col});
+                margin-right: $ml - 1;
+                margin-bottom: 0;
+
+                &:nth-of-type(#{$col}n) {
+                    margin-right: 0;
+                }
+            }
+        }
+        &.ly_col__3 {
+            > * {
+                $ml: 30px * .6;
+                $col: 3;
+                width: calc((100% - #{$ml} * #{$col - 1}) / #{$col});
+                margin-right: $ml - 1;
+                margin-bottom: 0;
+
+                &:nth-of-type(#{$col}n) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    @include media(lg) {
+        &.ly_col__2 {
+            > * {
+                $ml: 50px * .8;
+                $col: 2;
+                width: calc((100% - #{$ml} * #{$col - 1}) / #{$col});
+                margin-right: $ml - 1;
+            }
+        }
+        &.ly_col__3 {
+            > * {
+                $ml: 50px * .8;
+                $col: 3;
+                width: calc((100% - #{$ml} * #{$col - 1}) / #{$col});
+                margin-right: $ml - 1;
+            }
+        }
+    }
+    @include media(xl) {
+        &.ly_col__2 {
+            > * {
+                $ml: 50px;
+                $col: 2;
+                width: calc((100% - #{$ml} * #{$col - 1}) / #{$col});
+                margin-right: $ml - 1;
+            }
+        }
+        &.ly_col__3 {
+            > * {
+                $ml: 50px;
+                $col: 3;
+                width: calc((100% - #{$ml} * #{$col - 1}) / #{$col});
+                margin-right: $ml - 1;
+            }
+        }
+    }
+}
+
+/*フッター
+---------------------------------------------------------------------------*/
+.ly_footer {
+    &_inner {
+        padding: 25px 0;
+        @include container;
+        text-align: center;
+    }
+    @include media(ltXl) {
+        &_inner {
+            padding: 25px * .8 0;
+        }
+    }
+    @include media(tabSp) {
+        &_inner {
+            padding: 25px * .6 0;
+        }
+    }
+    @include media(smOnly) {
+        &_inner {
+            padding: 15px 0;
+        }
+    }
+}

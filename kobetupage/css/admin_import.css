@@ -1,0 +1,318 @@
+@charset "UTF-8";
+/*
+    cssファイルは全てこのファイルで管理しています。
+    変更は自己責任でお願いいたします。
+
+    設計手法：PRECSS
+    https://precss.io/ja/
+========================================================== */
+
+
+/* 基本設定 */
+@import "base.css";
+/* レイアウト */
+@import "layout.css";
+/* モジュール */
+@import "module/element.css";
+@import "module/block.css";
+
+/* 汎用クラス */
+@import "helper.css";
+/* JS用クラス */
+@import "program.css";
+/* ユニークグループ */
+@import "unique.css";
+
+
+/* 追加CSS 2021.01.04 */
+.site-header *,
+.site-header *::before,
+.site-header *::after,
+.site-footer *,
+.site-footer *::before,
+.site-footer *::after {
+    box-sizing: content-box;
+}
+
+.site-header,
+.site-footer {
+    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+}
+
+.site-header button,
+.site-footer button,
+.site-footer .btn-title {
+    line-height: 1.15;
+}
+
+.site-header .nav-upper-wrapper {
+    margin-top: 16px;
+}
+
+.site-header .mail-magazine .description {
+    letter-spacing: 0;
+}
+
+.site-footer {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+#nav-open::before,
+#nav-open::after {
+    border: none;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+
+/* 追加CSS 2021.02.18 */
+
+.bl_cta2 {
+    padding: 80px 0 108px;
+    background-color: #f4eddb;
+}
+
+.bl_cta2_inner {
+    padding: 25px 15px 110px;
+    color: #000;
+}
+
+.el_cta2_ttl {
+    font-size: 4.2rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    margin-bottom: 25px;
+}
+
+
+.bl_cta2 .el_ttl_strongS {
+    padding-bottom: 7px;
+}
+
+.bl_cta2_label {
+    max-width: 782px;
+    width: 100%;
+    margin: 0 auto 30px;
+}
+
+.bl_cta2_label img,
+.bl_cta2_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.bl_cta2_img {
+    max-width: 814x;
+    width: 100%;
+    margin: 0 auto 20px;
+}
+
+.bl_cta2_subttl {
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.bl_cta2_txt {
+    font-size: 2.4rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.bl_cta2_txt .underline {
+    text-decoration: underline;
+}
+
+.bl_cta2_inputWrap {
+    display: flex;
+    align-items: center;
+    margin: 25px 0 0;
+}
+
+.bl_cta2_label {
+    flex: 0 1 20.6%;
+    margin-right: 3.1%;
+    margin-top: 31px;
+}
+
+.bl_cta2_label label {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.bl_cta2_input {
+    flex: 75%;
+    height: 70px;
+    box-sizing: border-box;
+}
+
+.bl_cta2_input input {
+    font-size: 1.8rem;
+    width: 100%;
+    height: 70px;
+    padding: 18px 10px 18px 24px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.bl_cta2_btn {
+    max-width: 615px;
+}
+
+.bl_cta2_btn .el_cta {
+    letter-spacing: 0.1em;
+}
+
+.bl_cta2_btn:after {
+    content: "";
+    position: absolute;
+    top: 49%;
+    right: 64px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    -ms-transform: rotate(45deg) translateY(-50%);
+    transform: rotate(45deg) translateY(-50%);
+}
+
+
+@media screen and (max-width: 1240px) {
+
+    .el_cta2_ttl {
+        font-size: 3.2rem;
+    }
+
+    .bl_cta2_txt {
+        font-size: 2rem;
+        letter-spacing: 0.05em;
+    }
+
+    .bl_cta2_label label {
+        font-size: 1.6rem;
+        letter-spacing: 0.03em;
+    }
+
+    .bl_cta2_input {
+        flex: 65%;
+    }
+
+    .bl_cta2_input input {
+        font-size: 1.6rem;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .el_cta2_ttl {
+        font-size: 2.4rem;
+    }
+
+    .bl_cta2_subttl {
+        font-size: 2rem;
+        letter-spacing: 0.03em;
+    }
+
+    .bl_cta2_txt {
+        font-size: 1.6rem;
+        letter-spacing: 0.03em;
+    }
+
+    .bl_cta2_label label {
+        font-size: 1.4rem;
+        letter-spacing: 0;
+    }
+
+    .bl_cta2_input {
+        flex: 55%;
+    }
+
+    .bl_cta2_input input {
+        max-width: 400px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .bl_cta2_inner {
+        padding: 20px 15px 50px;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+    .bl_cta2 {
+        padding: 40px 0 78px;
+    }
+
+
+    .bl_cta2 .el_txtXl {
+        font-size: 1.6rem;
+    }
+
+    .el_cta2_ttl {
+        margin-top: 6px;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .bl_cta2 .el_ttl_strongS {
+        padding-bottom: 3px;
+    }
+
+
+    .bl_cta2_label {
+        margin: 0px auto 20px;
+    }
+
+    .bl_cta2_subttl {
+        font-size: 1.3rem;
+        letter-spacing: 0;
+    }
+
+    .bl_cta2_txt {
+        font-size: 1.3rem;
+        letter-spacing: 0;
+        margin-top: 5px;
+    }
+
+    .bl_cta2_inputWrap {
+        display: block;
+        margin: 20px 0 0;
+    }
+
+    .bl_cta2_label {
+        text-align: left;
+        margin: 0 0 10px;
+    }
+
+    .bl_cta2_label label {
+        font-size: 1.4rem;
+    }
+
+    .bl_cta2_input {
+        height: 46px;
+    }
+
+    .bl_cta2_input input {
+        font-size: 1.3rem;
+        padding: 10px;
+        height: 46px;
+    }
+
+    .bl_cta2_btn:after {
+        top: 48%;
+        right: 30px;
+        width: 10px;
+        height: 10px;
+    }
+
+}

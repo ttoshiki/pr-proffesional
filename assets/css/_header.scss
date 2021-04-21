@@ -1,0 +1,266 @@
+@import "variables";
+
+.top-header {
+    position: absolute;
+    width: 100%;
+}
+.site-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 24px;
+
+    & .site-branding {
+        display: flex;
+        align-items: flex-end;
+        z-index: 1000;
+    }
+
+    & .logo {
+        width: 360px;
+    }
+
+    & .site-navigation {
+        width: 60%;
+        max-width: 1024px;
+        display: flex;
+        justify-content: flex-end;
+        z-index: 1000;
+    }
+
+    & .pc-nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & .nav-upper-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 0;
+
+        & .nav-upper {
+            margin-right: 24px;
+        }
+
+        & .btn-contact {
+            border:2px solid $brand-color-dark;
+            color: $brand-color-dark;
+            background-color: $white;
+            padding: 11px 32px;
+            font-weight: bold;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        & .mail-magazine {
+            background-color: $brand-color-dark;
+            & a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: $white;
+                text-decoration: none;
+                padding: 0 32px;
+                & .mail-icon {
+                    display: block;
+                    padding-right: 16px;
+                }
+            }
+        }
+        & .description {
+            padding: 4px 0;
+            font-weight: bold;
+            font-size: 10px;
+        }
+        & .strong {
+            font-size: 14px;
+        }
+    }
+
+    & .nav-lower-wrapper {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0;
+        & .nav-list {
+            font-size: 18px;
+            & .header-link {
+                font-weight: bold;
+                color: $brand-color;
+                text-decoration: none;
+            }
+            &:not(:last-child) {
+                margin-right: 40px;
+             }
+        }
+    }
+
+    .sp-nav {
+       padding:10px;
+    }
+
+    #nav-drawer {
+    position: relative;
+    }
+
+    /*チェックボックス等は非表示に*/
+    .nav-unshown {
+    display:none;
+    }
+
+    /*アイコンのスペース*/
+    #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+    }
+
+    /*ハンバーガーアイコンをCSSだけで表現*/
+    #nav-open span, #nav-open span::before, #nav-open span::after {
+    position: absolute;
+    height: 4px;/*線の太さ*/
+    width: 30px;/*長さ*/
+    border-radius: 3px;
+    background: $brand-color;
+    display: block;
+    content: '';
+    cursor: pointer;
+    }
+    #nav-open span::before {
+    bottom: -9px;
+    }
+    #nav-open span::after {
+    bottom: -18px;
+    }
+
+    /*閉じる用の薄黒カバー*/
+    #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    }
+
+    /*中身*/
+    #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: $white;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+    }
+
+    /*チェックが入ったらもろもろ表示*/
+    #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+    }
+
+    #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+    }
+
+}
+
+@media screen and (max-width: 1096px) {
+    .site-header {
+        & .nav-lower-wrapper {
+            & .nav-list {
+                font-size: 16px;
+                &:not(:last-child) {
+                    margin-right: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .top-header .site-header {
+        top: 4px;
+    }
+    .site-header {
+        justify-content: space-between;
+        margin: 8px auto;
+        padding-bottom: 8px;
+        & .logo {
+            width: 100%;
+        }
+        & .site-branding {
+            padding-left: 16px;
+        }
+        & .sp-nav-wrapper {
+            margin: 0;
+        }
+
+        & .sp {
+            display: block;
+            padding-right: 10px;
+            margin-right: 10px;
+        }
+        & .pc-nav {
+            display: none;
+        }
+
+        a {
+            color: $white;
+            text-decoration: none;
+            margin-left: 8px;
+            margin-top: 16px;
+        }
+
+        & .site-navigation {
+            display: flex;
+            align-items: center;
+            width: 46%;
+        }
+
+        & #nav-content {
+            background-color: $brand-color;
+            max-width: 274px;
+
+            & .nav-list {
+                font-size: 18px;
+                padding: 16px;
+                &:not(:last-child) {
+                    border-bottom: 1px solid #ccc;
+                }
+
+                & .submenu-wrapper {
+                    margin-top: 4px;
+                }
+
+                & .submenu {
+                    font-size: 16px;
+                    padding: 4px 16px;
+                }
+            }
+
+            & .nav-contact {
+                display: flex;
+                align-items: center;
+                padding-left: 30px;
+                background-color: $yellow;
+            }
+            & .footer-contact-link {
+                margin-left: 0;
+            }
+        }
+    }
+}

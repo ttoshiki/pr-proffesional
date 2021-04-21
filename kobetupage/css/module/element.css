@@ -1,0 +1,534 @@
+@charset "UTF-8";
+/* エレメントグループ
+
+・ボタンやラベル、見出し等の最小単位のモジュールで、どこにでも埋め込むことが可能なモジュール
+========================================================== */
+/*ボタン
+---------------------------------------------------------------------------*/
+/*cta*/
+.el_cta {
+  display: inline-block;
+  position: relative;
+  padding: 1em 0.6em;
+  width: 290px;
+  max-width: 100%;
+  border-radius: 3px;
+  background-color: #d7061f;
+  color: #fff;
+  font-size: 1.6rem;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.el_cta > img {
+  margin-right: 0.8em;
+  width: 2em;
+  vertical-align: middle;
+}
+.el_cta::after {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-top: 0.06em solid #fff;
+  border-right: 0.06em solid #fff;
+  -ms-transform: rotate(45deg) translateY(-30%);
+      transform: rotate(45deg) translateY(-30%);
+  content: "";
+  -ms-transform: rotate(45deg) translateY(-45%);
+      transform: rotate(45deg) translateY(-45%);
+}
+@media screen and (min-width: 768px) {
+  .el_cta {
+    padding: 0.6em;
+    width: 441px;
+    font-size: 2.16rem;
+    border-radius: 4px;
+    letter-spacing: 0.2em;
+    transition: all 0.25s ease-out;
+  }
+  .el_cta::after {
+    margin-left: 0.4em;
+  }
+  .el_cta:focus, .el_cta:hover {
+    opacity: 0.6;
+  }
+}
+@media screen and (min-width: 992px) {
+  .el_cta {
+    width: 588px;
+    font-size: 2.88rem;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .el_cta {
+    width: 735px;
+    font-size: 3.6rem;
+  }
+}
+
+button.el_cta,
+input.el_cta {
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.8;
+}
+@media screen and (min-width: 768px) {
+  button.el_cta,
+input.el_cta {
+    line-height: 2;
+  }
+}
+
+/*タイトル
+---------------------------------------------------------------------------*/
+.el_lv2Ttl {
+  position: relative;
+  margin-bottom: 110px;
+  padding: 0.9em 0.6em;
+  background-color: #c7a44b;
+  color: #fff;
+  text-align: center;
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+}
+.el_lv2Ttl_strong {
+  display: inline-block;
+  margin: 0 0.1em;
+  font-size: 4.7rem;
+  line-height: 1.3;
+  -ms-transform: translateY(0.1em);
+      transform: translateY(0.1em);
+}
+.el_lv2Ttl::after {
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -27px;
+  width: 55px;
+  height: 55px;
+  background-color: #c7a44b;
+  -ms-transform: translateX(-50%) rotate(45deg);
+      transform: translateX(-50%) rotate(45deg);
+  content: "";
+  z-index: -1;
+}
+@media screen and (max-width: 1239px) {
+  .el_lv2Ttl {
+    margin-bottom: 88px;
+    padding: 1em 0.6em;
+    font-size: 2.56rem;
+  }
+  .el_lv2Ttl_strong {
+    font-size: 3.76rem;
+  }
+  .el_lv2Ttl::after {
+    bottom: -21.6px;
+    width: 44px;
+    height: 44px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .el_lv2Ttl {
+    margin-bottom: 66px;
+    padding: 1em 0.6em;
+    font-size: 1.92rem;
+  }
+  .el_lv2Ttl_strong {
+    font-size: 2.82rem;
+  }
+  .el_lv2Ttl::after {
+    bottom: -16.2px;
+    width: 33px;
+    height: 33px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .el_lv2Ttl {
+    margin-bottom: 40px;
+    padding: 0.7em 0.2em;
+    font-size: 1.4rem;
+    letter-spacing: 0;
+    line-height: 1.8;
+  }
+  .el_lv2Ttl_strong {
+    margin: 0;
+    font-size: 2.2rem;
+  }
+  .el_lv2Ttl::after {
+    bottom: -13px;
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.el_sectTtl {
+  margin-bottom: 50px;
+  color: #202d73;
+  font-size: 3rem;
+  text-align: center;
+  line-height: 2.5;
+}
+.el_sectTtl_strong {
+  font-size: 5.5rem;
+  display: inline;
+  background: linear-gradient(transparent 50%, rgba(199, 164, 75, 0.5) 0%) !important;
+  line-height: 1.3;
+}
+@media screen and (max-width: 1239px) {
+  .el_sectTtl {
+    margin-bottom: 40px;
+    font-size: 2.4rem;
+  }
+  .el_sectTtl_strong {
+    font-size: 4.4rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  .el_sectTtl {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+  }
+  .el_sectTtl_strong {
+    font-size: 3.3rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .el_sectTtl {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+  }
+  .el_sectTtl_strong {
+    font-size: 2.8rem;
+  }
+}
+
+.el_ttl {
+  font-size: 3rem;
+  line-height: 2;
+}
+.el_ttl_strongXs {
+  font-size: 4.5rem;
+  line-height: 1.3;
+  display: inline;
+  background: linear-gradient(transparent 50%, rgba(199, 164, 75, 0.5) 0%) !important;
+}
+.el_ttl_strongS {
+  font-size: 5rem;
+  line-height: 1.3;
+  display: inline;
+  background: linear-gradient(transparent 50%, rgba(199, 164, 75, 0.5) 0%) !important;
+}
+.el_ttl_strongM {
+  font-size: 5.2rem;
+  line-height: 1.3;
+  display: inline;
+  background: linear-gradient(transparent 50%, rgba(199, 164, 75, 0.5) 0%) !important;
+}
+.el_ttl_strongL {
+  font-size: 5.5rem;
+  line-height: 1.3;
+  display: inline;
+  background: linear-gradient(transparent 50%, rgba(199, 164, 75, 0.5) 0%) !important;
+}
+.el_ttl.el_ttl__l {
+  font-size: 3.7rem;
+}
+.el_ttl.el_ttl__sec {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/*タイトル レスポンシブ*/
+@media screen and (max-width: 1239px) {
+  .el_ttl {
+    font-size: 2.4rem;
+  }
+  .el_ttl_strongXs {
+    font-size: 3.6rem;
+  }
+  .el_ttl_strongS {
+    font-size: 4rem;
+  }
+  .el_ttl_strongM {
+    font-size: 4.16rem;
+  }
+  .el_ttl_strongL {
+    font-size: 4.4rem;
+  }
+  .el_ttl.el_ttl__l {
+    font-size: 2.96rem;
+  }
+  .el_ttl.el_ttl__sec {
+    margin-bottom: 48px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .el_ttl {
+    font-size: 1.8rem;
+  }
+  .el_ttl_strongXs {
+    font-size: 2.7rem;
+  }
+  .el_ttl_strongS {
+    font-size: 3rem;
+  }
+  .el_ttl_strongM {
+    font-size: 3.12rem;
+  }
+  .el_ttl_strongL {
+    font-size: 3.3rem;
+  }
+  .el_ttl.el_ttl__l {
+    font-size: 2.22rem;
+  }
+  .el_ttl.el_ttl__sec {
+    margin-bottom: 36px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .el_ttl {
+    font-size: 1.6rem;
+  }
+  .el_ttl_strongS {
+    font-size: 2.2rem;
+  }
+  .el_ttl_strongM {
+    font-size: 2.4rem;
+  }
+  .el_ttl_strongL {
+    font-size: 2.6rem;
+  }
+  .el_ttl.el_ttl__l {
+    font-size: 1.6rem;
+  }
+  .el_ttl.el_ttl__sec {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+}
+/*テキスト
+---------------------------------------------------------------------------*/
+.el_txtS {
+  font-size: 1.7rem;
+}
+
+.el_txtL {
+  font-size: 2.4rem;
+}
+
+.el_txtXl {
+  font-size: 2.8rem;
+}
+
+.el_txtStrong {
+  padding-bottom: 0.1em;
+  border-bottom: 2px solid;
+  border-bottom-width: 2px;
+  color: #e71212;
+  font-size: 4.5rem;
+}
+.el_txtStrong.el_txtStrong__s {
+  font-size: 3.5rem;
+}
+
+.el_sectTxt {
+  margin-bottom: 50px;
+  font-size: 2.8rem;
+  text-align: center;
+  color: #202d73;
+}
+
+/*タイトル レスポンシブ*/
+@media screen and (max-width: 1239px) {
+  .el_txtS {
+    font-size: 1.36rem;
+  }
+
+  .el_txtL {
+    font-size: 1.92rem;
+  }
+
+  .el_txtXl {
+    font-size: 2.24rem;
+  }
+
+  .el_txtStrong {
+    font-size: 3.6rem;
+  }
+  .el_txtStrong.el_txtStrong__s {
+    font-size: 2.8rem;
+  }
+
+  .el_sectTxt {
+    margin-bottom: 40px;
+    font-size: 2.24rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  .el_txtS {
+    font-size: 1.02rem;
+  }
+
+  .el_txtL {
+    font-size: 1.44rem;
+  }
+
+  .el_txtXl {
+    font-size: 1.68rem;
+  }
+
+  .el_txtStrong {
+    font-size: 2.7rem;
+  }
+  .el_txtStrong.el_txtStrong__s {
+    font-size: 2.1rem;
+  }
+
+  .el_sectTxt {
+    margin-bottom: 30px;
+    font-size: 1.68rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .el_txtS {
+    font-size: 1.2rem;
+  }
+
+  .el_txtL {
+    font-size: 1.3rem;
+  }
+
+  .el_txtXl {
+    font-size: 2rem;
+  }
+
+  .el_txtStrong {
+    font-size: 2.4rem;
+  }
+  .el_txtStrong.el_txtStrong__s {
+    font-size: 1.7rem;
+  }
+
+  .el_sectTxt {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+}
+/*矢印
+---------------------------------------------------------------------------*/
+.el_chev {
+  margin: 0 auto;
+  width: 30px;
+}
+
+.el_arrow {
+  margin: 0 auto;
+  width: 65px;
+}
+
+@media screen and (max-width: 1239px) and (max-width: 1239px) {
+  .el_chev {
+    width: 24px;
+  }
+}
+@media screen and (max-width: 1239px) and (max-width: 991px) {
+  .el_chev {
+    width: 18px;
+  }
+}
+@media screen and (max-width: 1239px) and (max-width: 767px) {
+  .el_chev {
+    width: 20px;
+  }
+}
+@media screen and (max-width: 1239px) and (max-width: 1239px) {
+  .el_arrow {
+    width: 52px;
+  }
+}
+@media screen and (max-width: 1239px) and (max-width: 991px) {
+  .el_arrow {
+    width: 39px;
+  }
+}
+@media screen and (max-width: 1239px) and (max-width: 767px) {
+  .el_arrow {
+    width: 33px;
+  }
+}
+/*ドット（文字上）
+---------------------------------------------------------------------------*/
+.el_dotTxt > span {
+  position: relative;
+}
+.el_dotTxt > span::before {
+  position: absolute;
+  left: 50%;
+  top: -0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  content: "";
+}
+@media screen and (max-width: 1239px) {
+  .el_dotTxt > span::before {
+    width: 4.8px;
+    height: 4.8px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .el_dotTxt > span::before {
+    width: 3.6px;
+    height: 3.6px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .el_dotTxt > span::before {
+    width: 3px;
+    height: 3px;
+  }
+}
+.el_dotTxt.el_dotTxt__gold > span::before {
+  background-color: #c7a44b;
+}
+.el_dotTxt.el_dotTxt__red > span::before {
+  background-color: #d7061f;
+}
+
+/*ドット（・）
+---------------------------------------------------------------------------*/
+.el_dot {
+  display: inline-block;
+  position: relative;
+  margin: 0 -0.3em;
+}
+.el_dot::after {
+  content: "・";
+}
+
+/*コピーライト
+---------------------------------------------------------------------------*/
+.el_copyright {
+  font-size: 1.5rem;
+  color: #202d73;
+  letter-spacing: 0.2em;
+}
+@media screen and (max-width: 1239px) {
+  .el_copyright {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  .el_copyright {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .el_copyright {
+    font-size: 1.1rem;
+  }
+}

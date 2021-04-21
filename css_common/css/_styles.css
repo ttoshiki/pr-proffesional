@@ -1,0 +1,353 @@
+.hero_banner li {
+ background-attachment:fixed !important;
+ position: relative;
+}
+
+.hero_banner li.hero1 {
+ background: url(/images/photo1.jpg) no-repeat center center;
+ background-size: cover;
+}
+.hero_banner li.hero2 {
+ background: url(/images/photo2.jpg) no-repeat center center;
+ background-size: cover;
+}
+
+.hero_banner li.hero3 {
+ background: url(/images/photo3.jpg) no-repeat center center;
+ background-size: cover;
+}
+
+.hero_banner li .tagline {
+ display: inline;
+ width: 50%;
+ min-width: 500px;
+ position: absolute;
+ top:39%;
+ left:40%;
+}
+
+
+.hero_banner li .name {
+ display: inline;
+ width: 104px;
+ position: absolute;
+ left:46px;
+ bottom:154px;
+}
+.hero_banner li .tagline img,
+.hero_banner li .name img {
+ width: 100%;
+}
+
+
+
+
+.hero_banneg {
+ width: 35%;
+ min-width: 500px;
+ position: absolute;
+ top:35%;
+ left:48%;
+}
+
+
+
+h1 {
+    margin: 0;
+    background:none;
+    padding:0;
+}
+
+
+
+
+
+
+header {
+    min-width: 800px;
+ background: rgba(0,0,80,0.8);
+ position: absolute;
+ bottom:0;
+ width: 100%;
+ height: 112px;
+  transition: 0.2s ease-out 0s;
+}
+header .logo .logo_nv {
+    display: none;
+}
+header .logo .logo_wh {
+    display: inline-block;
+}
+header a {
+    color: #FFF;
+}
+header li.home {
+    display: none;
+}
+
+
+header.fixed .logo {
+    margin: 0 0 0 64px;
+    width: 28px;
+    padding: 8px 0;
+  transition: 0.4s ease-out 0s;
+}
+header.fixed li {
+    margin: 16px 0 0 40px;
+  transition: 0.4s ease-out 0s;
+}
+
+
+
+.pickup {
+ margin: 0 0 -16px 0;
+ padding: 48px 0 32px 0;
+ border-bottom:1px solid #DDD;
+}
+.pickup .inner {
+ width: 480px;
+ margin: 0 auto 0 auto;
+}
+
+.pickup iframe {
+  width:220px;
+ height:124px;
+}
+
+
+.pickup li {
+ width: 220px;
+ float: left;
+ margin: 0 24px 0 0;
+}
+.pickup li:last-child {
+ margin: 0;
+}
+.pickup .image {
+}
+.pickup  .date {
+ font-size: 0.8rem;
+ color: #000066;
+ margin: 16px 0 0 0;
+}
+.pickup p {
+ font-size: 0.8rem;
+ line-height: 1.6;
+ margin: 8px 0 0 0;
+}
+
+
+
+
+
+
+.information {
+ width: 960px;
+ margin: 0 auto;
+ padding: 72px 0;
+ position: relative;
+}
+.information .information_title {
+ width: 160px;
+ position: absolute;
+ text-align: center;
+ top:72px;
+ left:0;
+}
+.information h2 {
+ font-size: 1.25rem;
+ color: #000066;
+ font-weight: 100;
+ background: url(/images/common/deco.png) no-repeat center bottom;
+ padding: 0 0 32px 0;
+ background-size: 162px auto;
+}
+.information .information_list {
+ margin: 24px 0 0 0;
+}
+.information .information_list a {
+ font-size: 0.8rem;
+ background: url(/images/common/arrow_lb.png) no-repeat right center;
+ padding: 0 16px 0 0;
+ background-size: 6px auto;
+}
+.information dl {
+ margin: 0 0 0 240px;
+ position: relative;
+ margin: -14px 0 0 240px;
+}
+.information dt {
+ position: absolute;
+ left:0;
+ color: #000066;
+ padding: 16px 0;
+  font-size: 0.9rem;
+ border-top:1px solid #eeeeee;
+}
+.information dd {
+ padding: 16px 0 16px 128px;
+  font-size: 0.9rem;
+ line-height: 1.6;
+ border-top:1px solid #eeeeee;
+}
+
+
+
+.pr {
+ background: url(/images/common/photo_statement.jpg) no-repeat center center;
+ background-size: cover;
+ padding: 160px 0;
+ text-align: center;
+}
+.pr h2 {
+ font-size: 1.82rem;
+ font-weight: 100;
+ color: #000066;
+ padding: 0 0 32px 0;
+ background: url(/images/common/line_nv.png) no-repeat center bottom;
+ background-size: auto 1px;
+}
+.pr p {
+ margin: 32px 0 0 0;
+ line-height: 2;
+}
+.pr p strong {
+ font-size: 1.5rem;
+ font-weight: 400;
+}
+.pr .more {
+ margin: 54px 0 0 0;
+}
+.more a {
+ text-align: center;
+ background: #000066;
+ color: #FFF;
+ padding: 16px 0;
+ width: 192px;
+ border-radius: 64px;
+ display: inline-block;
+}
+.more a span {
+ background: url(/images/common/arrow_wh.png) no-repeat right center;
+ background-size: 8px;
+ padding: 0 24px 0 0;
+ margin: 0 -24px 0 0;
+}
+
+
+
+
+.profile h2,
+.service h2{
+font-size: 1.8rem;
+ font-weight: 400;
+ color: #000066;
+ margin: 48px 0 0 0;
+ padding: 0 0 32px 0;
+ background: url(/images/common/line_nv.png) no-repeat left bottom;
+ background-size: auto 1px;
+}
+
+
+
+
+.service {
+ padding: 48px 0 108px 0;
+}
+.service .inner {
+ width: 900px;
+ margin: 0 auto;
+}
+.service .image {
+ width: 500px;
+ float: right;
+ text-align: right;
+ margin: -48px 0 0 0;
+}
+.service img {
+ width: 500px;
+}
+.service .text {
+ width: 400px;
+ margin: 0 0 0 0px;
+ padding: 48px 0 0 0;
+ float: left;
+}
+.service h3 {
+ color: #000066;
+ font-weight: 400;
+ font-size: 1.4rem;
+ margin: 48px 0 0 0;
+}
+.service h3:first-child {
+ margin: 0;
+}
+.service p {
+ line-height: 1.8;
+ font-size: 0.9rem;
+ margin: 16px 0 1em 0;
+}
+.service p em {
+ font-size: 1.1rem;
+ font-weight: 400;
+}
+.service br {
+}
+.service .more {
+ margin: 16px 0 0 0;
+}
+.service .more a {
+ margin: 8px 0 0 0;
+ width: 240px;
+ font-size: 0.9rem;
+}
+
+
+
+
+
+.profile {
+ background: url(/images/photo_profile.jpg) no-repeat center center;
+ background-size: cover;
+ padding: 88px 0 144px 0;
+ text-align: left;
+
+}
+.profile .inner {
+ width: 960px;
+ margin: 0 auto;
+ padding: 0 0 0 560px;
+ box-sizing: border-box;
+}
+.profile .title {
+ margin: 32px 0 0 0;
+ font-size:  0.8em;
+}
+.profile .title+.title {
+ margin: 16px 0 0 0;
+}
+.profile .name {
+ font-size:  1.4em;
+ letter-spacing: 0.2rem;
+ border-bottom: 1px solid #cccccc;
+ padding: 0 0 40px 0;
+ margin: 12px 0 40px 0;
+}
+.profile p {
+ line-height: 1.8;
+ font-size: 0.9rem;
+}
+.profile .more {
+ margin: 48px 0 0 0;
+}
+.profile .more.profile a {
+}
+
+.story_btn {
+ margin: 0 0 64px 0;
+}
+
+
+.story_btn.accordion-open {
+ margin: 0 0 0 0;
+}

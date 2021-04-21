@@ -1,0 +1,416 @@
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  box-sizing: border-box;
+  line-height: 1.5;
+  color: $black;
+}
+
+h1 {
+  font-size: 32px;
+  color: $brand-color;
+  font-weight: normal;
+}
+
+address,
+em {
+  font-style: normal;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@mixin content-width {
+  max-width: 1096px;
+  margin: 0 auto;
+}
+
+@mixin heading-before-line {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 6px;
+  vertical-align: middle;
+  margin-right: 24px;
+  background-color: $brand-color;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝
+    フェードイン
+＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+.fadein {
+    opacity : 0;
+    transform : translateY(10px);
+    transition : all 1s;
+}
+
+.fadein.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+.horizontal {
+  display: flex;
+}
+
+.pagination {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin: auto;
+
+  & .pager,
+  & .next,
+  & .prev {
+    margin: 0 8px;
+    padding: 8px 12px;
+    border: 1px solid $brand-color;
+    color: $brand-color;
+    text-decoration: none;
+  }
+
+  & .next,
+  & .prev,
+  & .last {
+    border: none;
+  }
+
+  & .current {
+    border: 1px solid $brand-color;
+    background-color: $brand-color;
+    color: $white;
+  }
+}
+
+.active {
+  & .heading2 {
+    font-size: 32px;
+  }
+  & .graduate-img {
+      display: block;
+      margin: 40px auto 40px;
+      max-width: 100%;
+  }
+  & .check-list-wrapper {
+      margin: 80px auto 40px;
+      max-width: 940px;
+  }
+  & .check-list {
+      font-size: 24px;
+      margin-bottom: 16px;
+      padding-left: 40px;
+      background: url('assets/img/icon_checkbox.svg') no-repeat center left;
+      background-size: 24px;
+  }
+  & .em {
+    font-size: 32px;
+    font-weight: bold;
+    color: $brand-color;
+  }
+}
+
+.merit {
+    max-width: 1096px;
+    margin: auto;
+    & .heading2 {
+      text-align: center;
+      letter-spacing: $text-space-m;
+      margin-bottom: 64px;
+    }
+    & .strong {
+        font-size: 64px;
+        color: $yellow;
+    }
+    & .merit-img-text-wrapper {
+        display: flex;
+        align-items: flex-start;
+        & .img {
+            width: 50%;
+            max-width: 400px;
+        }
+        & .text-wrapper {
+            display: flex;
+            flex-direction: column;
+            background-color: transparent;
+            padding-left: 40px;
+        }
+        &:nth-child(odd)  {
+            display: flex;
+            flex-direction: row-reverse;
+            & .text-wrapper {
+                padding-left: 0;
+                padding-right: 40px;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 80px;
+        }
+    }
+    & .title-wrapper {
+        display: flex;
+    }
+    & .text {
+        line-height: 1.8;
+    }
+    & .number {
+        margin-top: 8px;
+        padding: 4px;
+        font-size: 48px;
+        width: 64px;
+        min-width: 64px;
+        height: 64px;
+        line-height: 64px;
+        border-radius: 50%;
+        background-color: #157db4;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+    }
+    & .heading3 {
+        display: block;
+        margin: 10px 0 0 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+.post-voice {
+        padding-bottom: 80px;
+        & .btn {
+            border: 1px solid $brand-color;
+            border-radius: 24px;
+            padding: 12px 64px;
+            display: block;
+            margin: auto;
+            color: $brand-color;
+            letter-spacing: $text-space-l;
+            transition: .2s;
+            &:hover {
+                cursor: pointer;
+                opacity: .8;
+            }
+        }
+        .article-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            width: 96%;
+            max-width: 1096px;
+            justify-content: space-between;
+            margin: auto;
+            a {
+                text-decoration: none;
+                width: 24%;
+            }
+        }
+        .list-wrapper {
+            width: 24%;
+            min-width: 224px;
+            .title {
+                color: $brand-color;
+                font-size: 16px;
+                width: 80%;
+                margin: 24px auto;
+                text-align: center;
+            }
+            .company-position {
+                font-size: 10px;
+                color: $black;
+                margin-bottom: 0;
+            }
+            & .graduate-name-wrapper {
+                color: $black;
+            }
+            & .article-content {
+                color: $black;
+            }
+            .article-link {
+                background-color: $brand-color;
+                color: $white;
+                padding: 6px 40px;
+                border: none;
+                display: block;
+                margin: 40px auto 100px;
+                border-radius: 16px;
+                transition: .2s;
+                font-size: 14px;
+                &:hover {
+                    cursor: pointer;
+                    opacity: .8;
+                }
+            }
+            .article-img {
+                max-width: 100%;
+            }
+            .wp-post-image {
+                width: 100%;
+                height: 210px;
+                object-fit: cover;
+            }
+            .article-content {
+                font-size: 12px;
+            }
+        }
+        & .heading2 {
+            font-size: 36px;
+            color: $brand-color;
+            & .strong {
+                font-size: 48px;
+            }
+        }
+    }
+
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: 769px) {
+  .pc {
+    display: none;
+  }
+
+  .sp {
+    display: block;
+  }
+
+  .pagination {
+    & .next,
+    & .prev {
+      display: none;
+    }
+  }
+
+  .active {
+    & .heading2 {
+      padding: 0 16px;
+      & .em {
+        font-size: 28px;
+      }
+    }
+    & .graduate-img {
+      width: 96%;
+    }
+    & .check-list-wrapper {
+      padding: 0 16px;
+      margin: 40px auto 24px;
+    }
+    & .check-list {
+      background-position: top left;
+      font-size: 18px;
+    }
+    & .em {
+      font-size: 24px;
+    }
+  }
+  .merit {
+      .strong {
+          font-size: 40px;
+      }
+      & .heading2 {
+          margin-bottom: 40px;
+      }
+      & .merit-img-text-wrapper {
+          display: block;
+          &:not(:last-child) {
+              margin-bottom: 80px;
+          }
+          &:nth-child(odd) {
+            display: block;
+              & .text-wrapper {
+                  padding-right: 0;
+              }
+          }
+          & .img {
+              width: 100%;
+              display: block;
+              margin: auto;
+          }
+          & .text-wrapper {
+              padding-left: 0;
+          }
+      }
+      & .number {
+          width: 48px;
+          min-width: 48px;
+          height: 48px;
+          line-height: 48px;
+          font-size: 40px;
+      }
+      .title-wrapper {
+        margin-top: 24px;
+        justify-content: center;
+      }
+  }
+  .post-voice {
+           .list-wrapper {
+               display: flex;
+               align-items: flex-start;
+               width: 96%;
+               padding: 0 12px;
+               .title {
+                   width: 100%;
+                   font-size: 13px;
+                   margin-top: 0;
+                   margin-bottom: 8px;
+                   text-align: left;
+               }
+               .wp-post-image {
+                   height: 170px;
+                   width: 170px;
+               }
+            .company-position {
+                   font-size: 10px;
+                   margin-bottom: 0;
+            }
+            .graduate-name-wrapper {
+                display: block;
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+            .article-link {
+                   padding: 4px 28px;
+                   font-size: 14px;
+                   margin-top: 16px;
+                   margin-bottom: 16px;
+                   margin-left: 0;
+               }
+            }
+            .article-wrapper {
+                a {
+                    width: 100%;
+                }
+            }
+            .sp-wrapper {
+                margin-left: 24px;
+                width: 75%;
+            }
+            .heading2 {
+                font-size: 24px;
+                .strong {
+                    font-size: 36px;
+                }
+            }
+            .article-content.sp {
+                width: 96%;
+                margin: 0 auto 48px;
+                padding: 0 12px;
+                color: $black;
+                font-size: 12px;
+            }
+       }
+}

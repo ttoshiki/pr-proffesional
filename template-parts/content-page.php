@@ -1,0 +1,17 @@
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+	</header><!-- .entry-header -->
+
+	<?php _s_post_thumbnail(); ?>
+
+	<div class="entry-content">
+		<?php
+        the_content();
+
+        wp_link_pages(array(
+            'before' => '<div class="page-links">' . esc_html__('Pages:', '_s'),
+            'after'  => '</div>',
+        ));
+        ?>
+	</div><!-- .entry-content -->
+</article><!-- #post-<?php the_ID(); ?> -->

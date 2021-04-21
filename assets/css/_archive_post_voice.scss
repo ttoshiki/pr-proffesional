@@ -1,0 +1,320 @@
+@import "variables";
+
+.graduate-voice-page {
+    & .graduate-pc {
+        display: block;
+    }
+    & .graduate-sp {
+        display: none;
+    }
+    & em,
+    & strong {
+        font-weight: bold;
+    }
+    & h2 {
+        font-size: 24px;
+        color: $brand-color;
+        margin: 120px 0 60px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $gray-100;
+    }
+    & .title-wrapper {
+        display: flex;
+        padding: 24px 16px;
+        border-top: 1px solid $gray-100;
+        &:hover {
+            cursor: pointer;
+            background-color: $brand-color-light;
+        }
+    }
+    & .main {
+        @include content-width;
+        margin-top: 80px;
+    }
+    & .heading2 {
+        background-color: $brand-color;
+        color: $white;
+        padding: 16px 0;
+        text-align: center;
+    }
+    & .graduate-movie-wrapper {
+        & .wp-post-image {
+            max-width: 220px;
+            height: auto;
+        }
+    }
+    & .graduate-img-wrapper {
+        margin-right: 16px;
+        & > img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+    & .graduate-content-wrapper {
+        margin-left: 24px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        & .heading3 {
+            margin: 0;
+            color: $brand-color;
+            font-size: 20px;
+        }
+
+        & .graduate-tag {
+            background-color: $red;
+            font-size: 12px;
+            color: $white;
+            border-radius: 8px;
+            padding: 2px 4px;
+        }
+
+        & .company-position {
+            color: $gray-900;
+            margin: 8px 0 0;
+            font-size: 14px;
+        }
+
+        & .graduate-name-wrapper {
+           display: block;
+        }
+        & .graduate-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    & .graduate-icon {
+        margin-right: 16px;
+        width: 24px;
+    }
+
+    & .body-wrapper {
+        display: none;
+        margin: 80px 0 160px;
+        & .graduate-name {
+            display: block;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+        & .article-link {
+            display: block;
+            color: $brand-color;
+            font-size: 14px;
+            margin: 8px 0;
+            padding-left: 40px;
+        }
+        & .graduate-profile {
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 100%;
+                max-width: 1024px;
+                height: 1px;
+                margin: 40px 0 80px;
+                background-color: $black;
+            }
+        }
+        & .contents-wrapper {
+            & img {
+                display: block;
+                margin: 0 auto 40px;
+                width: 100%;
+                max-width: 960px;
+                height: auto;
+            }
+            & .p1 {
+                margin-bottom: 40px;
+            }
+        }
+    }
+    & .article-link-wrapper {
+        display: block;
+    }
+    & .article-link {
+        text-decoration: none;
+    }
+
+    & .bio-wrapper {
+        border: 1px solid $gray-900;
+        background-color: $gray-50;
+        padding: 24px;
+        font-size: 14px;
+        & .text {
+            display: inline-block;
+            margin: 0;
+        }
+        & .name {
+            margin-left: 24px;
+        }
+        & .heading4 {
+            margin: 0;
+            font-weight: normal;
+        }
+        & .article-link {
+            padding-left: 0;
+            margin: 0 0 24px;
+        }
+    }
+    & .voice-quote {
+        display: block;
+        margin-top: 8px;
+        position: relative;
+        &::before {
+            content: "";
+            top: -12px;
+            left: -56px;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('assets/img/icon_quote_top.svg') no-repeat;
+        }
+        &::after {
+            content: "";
+            bottom: -32px;
+            right: 0px;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('assets/img/icon_quote_bottom.svg') no-repeat;
+        }
+    }
+    & .voice-question {
+        font-size: 22px;
+        margin: 80px 0 40px;
+    }
+    & .short-interview {
+        & .graduate-voice-content-wrapper {
+            display: none;
+            width: 100%;
+            margin-top: 80px;
+            display: none;
+            margin-top: 80px;
+            & .graduate-name {
+                display: block;
+                margin-bottom: 24px;
+                font-size: 28px;
+            }
+            & .article-link {
+                display: block;
+                color: $brand-color;
+                font-size: 14px;
+                margin: 8px 0;
+                padding-left: 40px;
+            }
+            & .graduate-profile {
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 100%;
+                    max-width: 1024px;
+                    height: 1px;
+                    margin: 40px 0;
+                    background-color: $black;
+                }
+            }
+            & .graduate-voice-wrapper {
+                margin-bottom: 160px;
+                & .contents-wrapper {
+                    margin-right: 80px;
+                }
+            }
+        }
+        & .graduate-content-img-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap-reverse;
+        }
+        & .graduate-content-img:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        & .graduate-content-img {
+            margin-bottom: 80px;
+            max-width: 320px;
+            object-fit: contain;
+        }
+        & .article-wrapper {
+            &:last-child {
+                margin-bottom: 160px;
+            }
+        }
+    }
+    & .graduate-img-wrapper {
+        position: relative;
+        & .graduate-new {
+            position: absolute;
+            border-radius: 50%;
+            background-color: $red;
+            color: $white;
+            font-size: 10px;
+            padding: 5px 2px;
+            top: 38%;
+            left: 80%;
+        }
+    }
+    & #icon-minus {
+        display: none;
+    }
+    & .line {
+	font-size: 1.3em;
+	background: linear-gradient(transparent 0%, #cfdbec 0%);
+	font-weight: 600;
+    }
+}
+
+@media screen and (max-width:1096px) {
+    .graduate-voice-page {
+        & .main {
+            padding: 0 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .graduate-voice-page {
+        & .graduate-movie-wrapper {
+            & .wp-post-image {
+                width: 100px;
+            }
+        }
+        & .graduate-content-wrapper {
+            & .heading3 {
+                font-size: 18px;
+            }
+        }
+        & .company-position {
+            font-size: 14px;
+        }
+        & .horizontal {
+            display: block;
+        }
+        & .short-interview {
+            & .graduate-content-img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            & .graduate-pc {
+               display: none;
+           }
+           & .graduate-voice-content-wrapper {
+               & .graduate-voice-wrapper {
+                   & .contents-wrapper {
+                       margin-right: 0;
+                   }
+               }
+           }
+        }
+        & .voice-quote {
+            margin: 80px 0;
+            &::before {
+                top: -42px;
+                left: -6px;
+            }
+        }
+        & .graduate-sp {
+            display: block;
+        }
+    }
+}

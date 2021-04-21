@@ -1,0 +1,140 @@
+@import "variables";
+
+.mail-magazine-wrapper {
+    @include content-width;
+    & .em {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: $brand-color;
+        letter-spacing: $text-space-m;
+    }
+}
+
+.mail-magazine-block {
+    width: 100%;
+    border: 10px solid #f5f5ff;
+    margin: 16px auto 160px;
+    > .mail-magazine-heading {
+        margin: 40px auto 0;
+        color: $brand-color;
+        text-align: center;
+        letter-spacing: $text-space-m;
+        font-size: 32px;
+    }
+
+    > .mail-magazine-inner {
+       padding: 8px 40px;
+
+       > .text {
+           margin: 8px auto 24px;
+           text-align: center;
+       }
+    }
+
+
+
+    & .example-list-wrapper {
+        padding: 16px 166px;
+        margin-bottom: 40px;
+        background-color: #f5f5ff;
+        & .heading3 {
+            font-size: 24px;
+            margin: 0 auto 16px;;
+            color: #333;
+        }
+        & .example-list {
+            padding-left: 24px;
+            background: url('./assets/img/icon_checkbox.svg') no-repeat top left;
+            background-size: 16px;
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    & .regi {
+        display: block;
+        margin: 0 auto 24px;
+        padding: 16px 48px;
+        border: none;
+        color: $white;
+        background-color: $yellow;
+        font-size: 30px;
+        font-weight: bold;
+        transition: .2s;
+        &:hover {
+            cursor: pointer;
+            opacity: .8;
+        }
+        & .play-img {
+            width: 32px;
+            padding-right: 8px;
+        }
+        & .regi-content {
+            vertical-align: 5px;
+        }
+    }
+
+    & .right-position {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width:1024px) {
+  .mail-magazine-wrapper {
+      max-width: 90%;
+      margin: auto;
+
+      & .mail-magazine-block {
+          max-width: 100%;
+          margin-top: 0;
+
+          > .mail-magazine-inner {
+              padding: 32px 16px;
+          }
+
+          & .strong {
+              font-size: 20px;
+          }
+
+          & .example-box {
+              padding: 16px 12px;
+
+              & .example-list {
+                  padding-left: 20px;
+              }
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .mail-magazine-wrapper {
+      & .mail-magazine-block {
+          box-sizing: border-box;
+          margin-bottom: 40px;
+      }
+      & .regi {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          width: 100%;
+          font-size: 20px;
+          max-width: 375px;
+      }
+
+      & .mail-magazine-heading {
+          font-size: 24px;
+      }
+      & .em {
+          font-size: 16px;
+      }
+      & .example-list-wrapper {
+          padding: 16px
+      }
+  }
+}

@@ -1,0 +1,509 @@
+@charset "UTF-8";
+
+/* ----------------------- */
+/* common
+/* ----------------------- */
+
+.voicePage {
+  background-color: #fbfbfb;
+}
+
+.voicePageInner {
+  margin: 0 auto;
+  max-width: 999px;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.mark1 {
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.87;
+  letter-spacing: -0.02em;
+  background-color: #202d72;
+  padding: 5px 7px;
+}
+
+.mark2 {
+  background-color: #ced0e0;
+}
+
+.sp {
+  display: none;
+}
+
+/* ----------------------- */
+/* voicePageMv
+/* ----------------------- */
+
+.voicePageMv {
+  width: 100%;
+  height: 392px;
+  position: relative;
+  z-index: 1;
+}
+
+.voicePageMv__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 392px;
+  z-index: -1;
+}
+
+.voicePageMv__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.voicePageMv__ttl {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  padding: 122px 0 32px;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0px 0px 27px rgba(77, 93, 160, 0.3);
+}
+
+.voicePageMv__txt {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 27px rgba(77, 93, 160, 0.3);
+  text-align: center;
+  margin: 0;
+}
+
+/* ----------------------- */
+/* voicePageHead
+/* ----------------------- */
+
+.voicePageHead {
+  margin: 90px auto 0;
+}
+
+.voicePageHead__ttl {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 40px;
+  height: 40px;
+  background-color: #081665;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.voicePageHead__termList {
+  padding: 40px 0px;
+  background-color: #e8ebfb;
+  margin: 0 auto;
+}
+
+.voicePageHead__term {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  border-radius: 13px;
+  background-color: #081665;
+  display: inline-block;
+  position: relative;
+}
+
+.voicePageHead__term a {
+  color: #fff;
+  padding: 4px 14px;
+  display: inline-block;
+}
+
+.voicePageHead__term:first-child {
+  margin: 0 51px 29px 330px;
+}
+
+.voicePageHead__term:nth-child(2) {
+  margin-bottom: 29px;
+}
+
+.voicePageHead__term:nth-child(3) {
+  margin: 0 51px 0 158px;
+}
+
+.voicePageHead__term:first-child:after,
+.voicePageHead__term:nth-child(3):after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 26px;
+  background-color: #202d73;
+}
+
+.voicePageHead__term.current {
+  background-color: #c7a44b;
+}
+
+/* ----------------------- */
+/* voicePageCont
+/* ----------------------- */
+
+.voicePageCont {
+  padding: 90px 0 70px;
+}
+
+.voicePageItem {
+  margin-bottom: 70px;
+  padding: 53px 46px 40px 41px;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 0 21px 10px rgba(51, 51, 51, 0.13);
+}
+
+.voicePageItemLabel {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 12px 24px;
+  text-align: center;
+  background: -moz-linear-gradient(to bottom right, #071665, #2470d3);
+  background: -webkit-linear-gradient(to bottom right, #071665, #2470d3);
+  background: linear-gradient(to bottom right, #071665, #2470d3);
+  position: absolute;
+  top: -10px;
+  left: 45px;
+}
+
+.voicePageItemLabel:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent #1e2a6b transparent;
+}
+
+.voicePageItemHead {
+  display: flex;
+}
+
+.voicePageItemHead__txtWrap {
+  margin-right: 3%;
+}
+
+.voicePageItemHead__ttl {
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 2.6;
+  letter-spacing: 0.02em;
+  margin: 0 0 18px;
+  min-height: 140px;
+}
+
+.voicePage__txt {
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 2.3;
+  margin: 0;
+}
+
+.voicePageHead__img {
+  flex: 0 0 215px;
+  width: 215px;
+  height: 215px;
+  margin-left: auto;
+}
+
+.voicePageHead__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.voicePageItemDetail {
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 2;
+  margin: 35px 0 0;
+  position: relative;
+}
+
+.voicePageItemDetail:before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  left: 0;
+  width: 170px;
+  height: 2px;
+  background-color: #202d72;
+}
+
+/* ----------------------- */
+/* pagination2
+/* ----------------------- */
+
+.pagination2 .pager {
+  padding: 0 !important;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pagination2 .prev,
+.pagination2 .next {
+  color: #000 !important;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  padding: 6px 0 !important;
+}
+
+
+
+
+
+
+/* 1023px 
+--------------------------------------------- */
+@media (max-width: 1023px) {
+
+
+  /* ----------------------- */
+  /* common 1023px
+  /* ----------------------- */
+
+  .voicePageInner {
+    padding: 0 20px;
+  }
+
+
+  /* ----------------------- */
+  /* voicePageMv 1023px
+  /* ----------------------- */
+
+  .voicePageMv__txt {
+    font-size: 22px;
+  }
+
+  /* ----------------------- */
+  /* voicePageHead 1023px
+  /* ----------------------- */
+
+  .voicePageHead__term:first-child {
+    margin: 0 51px 29px 250px;
+  }
+
+  .voicePageHead__term:nth-child(3) {
+    margin: 0 51px 0 70px;
+  }
+
+  /* ----------------------- */
+  /* voicePageCont 1023px
+  /* ----------------------- */
+
+
+  .voicePageItemHead__ttl {
+    line-height: 1.7;
+  }
+
+
+}
+
+/* 767px 
+--------------------------------------------- */
+@media (max-width: 767px) {
+
+  /* ----------------------- */
+  /* common 767px
+  /* ----------------------- */
+
+  .mark1 {
+    font-size: 18px;
+    line-height: 1.47;
+    padding: 3px 5px;
+  }
+
+  .mark2 {
+    background-color: #ced0e0;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .sp {
+    display: block;
+  }
+
+  /* ----------------------- */
+  /* voicePageMv 767px
+  /* ----------------------- */
+
+  .voicePageMv {
+    height: 225px;
+  }
+
+  .voicePageMv__bg {
+    height: 225px;
+  }
+
+  .voicePageMv__ttl {
+    font-size: 24px;
+    padding: 50px 0 20px;
+  }
+
+  .voicePageMv__txt {
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0;
+    padding: 0 20px;
+  }
+
+  /* ----------------------- */
+  /* voicePageHead 767px
+  /* ----------------------- */
+
+  .voicePageHead {
+    margin: 50px auto 0;
+  }
+
+  .voicePageHead__ttl {
+    font-size: 14px;
+    line-height: 35px;
+    height: 35px;
+  }
+
+  .voicePageHead__termList {
+    padding: 30px 10px;
+  }
+
+  .voicePageHead__term {
+    font-size: 14px;
+    display: block;
+  }
+
+  .voicePageHead__term a {
+    color: #fff;
+    padding: 6px 0;
+    display: block;
+  }
+
+  .voicePageHead__term:first-child {
+    margin: 0 auto 25px;
+    width: 80px;
+  }
+
+  .voicePageHead__term:nth-child(2) {
+    margin: 0 auto 25px;
+    width: 140px;
+  }
+
+  .voicePageHead__term:nth-child(3) {
+    margin: 0 auto 25px;
+    width: 230px;
+  }
+
+  .voicePageHead__term:last-child {
+    margin: 0 auto;
+    width: 200px;
+  }
+
+  .voicePageHead__term:first-child:after,
+  .voicePageHead__term:nth-child(3):after {
+    content: none;
+  }
+
+  /* ----------------------- */
+  /* voicePageCont 767px
+  /* ----------------------- */
+
+  .voicePageCont {
+    padding: 40px 0;
+  }
+
+
+  .voicePageItem {
+    margin-top: 60px;
+    padding: 43px 26px 30px 21px;
+  }
+
+  .voicePageItemLabel {
+    font-size: 18px;
+    padding: 9px 15px;
+    top: -10px;
+    left: 20px;
+  }
+
+  .voicePageItemHead {
+    flex-direction: column;
+  }
+
+  .voicePageItemHead__txtWrap {
+    margin-right: 0;
+  }
+
+  .voicePageItemHead__ttl {
+    font-size: 13px;
+    line-height: 2;
+    margin: 0 0 18px;
+    min-height: 0px;
+  }
+
+  .voicePage__txt {
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .voicePageHead__img {
+    flex: 0 0 160px;
+    width: 160px;
+    height: 160px;
+    order: -1;
+    margin: 0 auto 30px;
+  }
+
+
+  .voicePageItemDetail {
+    font-size: 13px;
+    line-height: 1.9;
+    letter-spacing: -0.02em;
+    margin: 25px 0 0;
+  }
+
+  .voicePageItemDetail:before {
+    top: -13px;
+    width: 100%;
+  }
+
+}

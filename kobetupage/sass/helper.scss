@@ -1,0 +1,237 @@
+/* ヘルパーグループ
+
+・基本的に1つのスタイルのみで、意図的な上書きのため !important を付加することを推奨
+========================================================== */
+
+// 変数とミックスインをインポート
+@import "_variable";
+@import "_mixin";
+
+// ******************* ここから記述 *******************
+
+/*文字色
+---------------------------------------------------------------------------*/
+.hp_colorBlue {
+    color: $navy !important;
+}
+.hp_colorGold {
+    color: $gold !important;
+}
+.hp_colorRed {
+    color: $red !important;
+}
+
+/*背景色
+---------------------------------------------------------------------------*/
+.hp_bgGrayRight {
+    background-color: $gray-lighter !important;
+}
+.hp_bgBlack {
+    background-color: $black !important;
+    color: $white !important;
+}
+.hp_bgNavy {
+    background-color: rgb(0, 0, 41) !important;
+    color: $white !important;
+}
+.hp_bgLightblue {
+    background-color: $lightBlue;
+}
+
+/*テキスト
+---------------------------------------------------------------------------*/
+.hp_txtLeft {
+    text-align: left !important;
+}
+.hp_txtCenter {
+    text-align: center !important;
+}
+.hp_txtRight {
+    text-align: right !important;
+}
+
+
+/*フォント
+---------------------------------------------------------------------------*/
+.hp_fontItalic {
+    font-style: italic;
+}
+
+/*line-height
+---------------------------------------------------------------------------*/
+.hp_lineheightM {
+    line-height: 1.5;
+}
+
+/*border
+---------------------------------------------------------------------------*/
+.hp_txtBorder {
+    padding-bottom: .1em !important;
+    border-bottom: 1px solid !important;
+
+    &.hp_txtBorder__bold {
+        border-bottom-width: 2px !important;
+    }
+}
+
+/*margin
+---------------------------------------------------------------------------*/
+@for $i from 0 through 10 {
+    .hp_mb#{$i * 10} {
+        margin-bottom: #{$i * 10}px !important;
+    }
+}
+@include media(ltXl) {
+    @for $i from 0 through 10 {
+        .hp_mb#{$i * 10} {
+            margin-bottom: #{$i * 10 * .8}px !important;
+        }
+    }
+}
+@include media(tabSp) {
+    @for $i from 0 through 10 {
+        .hp_mb#{$i * 10} {
+            margin-bottom: #{$i * 10 * .6}px !important;
+        }
+    }
+}
+@include media(smOnly) {
+    @for $i from 0 through 10 {
+        .hp_mb#{$i * 10} {
+            margin-bottom: #{$i * 10}px !important;
+        }
+    }
+}
+.hp_mr1em {
+    margin-right: 1em !important;
+}
+
+/*スペース
+---------------------------------------------------------------------------*/
+
+/*スペース レスポンシブ*/
+.hp_spaceM {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+
+@include media(md) {
+    .hp_spaceM {
+        padding-top: 80px * .6 !important;
+        padding-bottom: 80px * .6 !important;
+    }
+}
+@include media(lg) {
+    .hp_spaceM {
+        padding-top: 80px * .8 !important;
+        padding-bottom: 80px * .8 !important;
+    }
+}
+@include media(xl) {
+    .hp_spaceM {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+}
+
+/*マーカー
+---------------------------------------------------------------------------*/
+.hp_ttlMarker {
+    @include marker;
+}
+.hp_txtMarker {
+    @include marker($size: 0%);
+    padding: .1em;
+}
+.hp_txtMarkerBlue {
+    @include marker($size: 0%, $color: $navy);
+    color: $white;
+    padding: .1em;
+}
+.hp_txtMarkerLightblue {
+    @include marker($size: 0%, $color: rgba($mainColor, .2));
+    padding: .1em;
+}
+.hp_txtMarkerRed {
+    @include marker($size: 0%, $color: $red);
+    color: $white;
+    padding: .1em;
+}
+
+/*スマホ時
+---------------------------------------------------------------------------*/
+@include media(smOnly) {
+
+/*非表示*/
+.sm_hidden {
+    display: none !important;
+}
+/*text-align: center*/
+.sm_txtCenter {
+    text-align: center !important;
+}
+.sm_txtLeft {
+    text-align: left !important;
+}
+/*フォントサイズ*/
+.sm_fszM {
+    font-size: 1.3rem !important;
+}
+/*margin*/
+@for $i from 0 through 10 {
+    .sm_mb#{$i * 10} {
+        margin-bottom: #{$i * 10}px !important;
+    }
+}
+.sm_mb15 {
+    margin-bottom: 15px !important;
+}
+.sm_mb25 {
+    margin-bottom: 25px !important;
+}
+.sm_mb45 {
+    margin-bottom: 45px !important;
+}
+
+/*スマホ時 終わり*/
+}
+
+/*タブレットサイズ以上
+---------------------------------------------------------------------------*/
+@include media(md) {
+    .md_hidden {
+        display: none !important;
+    }
+    // margin
+    @for $i from 0 through 10 {
+        .pc_mb#{$i * 10} {
+            margin-bottom: #{$i * 10 * .6}px !important;
+        }
+    }
+    .pc_ML40 {
+        margin-left: -40px;
+    }
+
+/*タブレットサイズ以上 終わり*/
+}
+@include media(lg) {
+    @for $i from 0 through 10 {
+        .pc_mb#{$i * 10} {
+            margin-bottom: #{$i * 10 * .8}px !important;
+        }
+    }
+    .pc_ML40 {
+        margin-left: -40px * .8;
+    }
+}
+@include media(xl) {
+    // margin
+    @for $i from 0 through 10 {
+        .pc_mb#{$i * 10} {
+            margin-bottom: #{$i * 10}px !important;
+        }
+    }
+    .pc_ML40 {
+        margin-left: -40px;
+    }
+}

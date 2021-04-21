@@ -1,0 +1,149 @@
+@import "variables";
+
+.column-page {
+    & .heading2 {
+        font-size: 56px;
+        font-weight: bold;
+        color: $brand-color;
+        text-align: center;
+        margin-bottom: 0;
+        padding-top: 80px;
+    }
+    & .subtitle {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 80px;
+    }
+    & .sec-inner {
+        @include content-width;
+    }
+    & .sec {
+        margin-bottom: 80px;
+    }
+    & .wp-post-image {
+        max-width: 260px;
+        height: auto;
+    }
+    & .article-list-wrapper {
+        display: flex;
+        & .article-list {
+            margin-right: 80px;
+        }
+    }
+    & .article {
+        margin-bottom: 40px;
+    }
+    & .article-content {
+        display: flex;
+        align-items: flex-start;
+    }
+    & .article-text {
+        margin-left: 40px;
+    }
+    & a {
+        text-decoration: none;
+    }
+    & .article-cat {
+        color: $brand-color;
+        border: 1px solid $brand-color;
+        display: inline-block;
+        margin-right: 16px;
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+    & .daytime {
+        font-size: 18px;
+        color: $black;
+    }
+    & .article-title {
+        display: block;
+        font-size: 28px;
+        margin-top: 8px;
+        color: $black;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $brand-color;
+    }
+    & .text {
+        color: $black;
+    }
+    & .reading {
+        color: $brand-color;
+        text-align: right;
+    }
+    & .reading-link {
+        color: $brand-color;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+    & .sidebar {
+        width: 80%;
+        & .sidebar-title {
+            background-color: $brand-color-light;
+            color: $brand-color;
+            text-align: center;
+            padding: 16px 0;
+        }
+        & .sidebar-list {
+            margin-bottom: 16px;
+            padding: 0 0 8px 16px;
+            border-bottom: 1px solid $gray-100;
+            & a {
+                color: $black;
+            }
+            &:last-child {
+                margin-bottom: 80px;
+            }
+        }
+        & .category-list li {
+            margin-bottom: 16px;
+            padding: 0 0 8px 16px;
+            border-bottom: 1px solid $gray-100;
+            & a {
+                color: $black;
+            }
+            &:last-child {
+                margin-bottom: 80px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1096px) {
+    .column-page {
+        & .article-list-wrapper {
+            padding: 16px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 769px) {
+    .column-page {
+        & .article-list-wrapper {
+            display: block;
+        }
+        & .article-content {
+            display: block;
+        }
+        & .wp-post-image {
+            display: block;
+            width: 100%;
+            max-width: initial;
+            margin: 0 auto 24px;
+        }
+        & .article:not(:first-child) {
+            margin-top: 80px;
+        }
+        & .article-text {
+            margin-left: 0;
+        }
+        & .pagination {
+            margin-bottom: 80px;
+        }
+        & .sidebar {
+            width: 100%;
+        }
+    }
+}
